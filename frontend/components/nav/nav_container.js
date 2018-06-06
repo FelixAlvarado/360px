@@ -8,8 +8,7 @@ const mapStateToProps = (state,ownProps) => (
    {}
 );
 const mapDispatchToProps = () => dispatch => ({
-  login: (user) => dispatch(login(user)),
-  signup: (user) => dispatch(signup(user))
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

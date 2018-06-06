@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit() {
-  // e.preventDefault();
+
   this.props.processForm(this.state);
 }
 
@@ -29,10 +29,19 @@ class SessionForm extends React.Component {
   return(
     <ul>
       {this.props.errors.map((error,i) => (
-        <li key={{i}}>{error}</li>
+        <li key={i}>{error}</li>
       ))}
     </ul>
   );
+}
+
+demo(){
+  const {formType} = this.props;
+  if (formType === 'Log In'){
+    return (
+      <button onClick={() => this.props.processForm({username:"user1",password:"password"})}>Demo Login</button>
+    );
+  }
 }
 
 render(){
@@ -50,6 +59,7 @@ render(){
       <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
       </label>
       <button onClick={() => this.handleSubmit()}>{formType}</button>
+      <p>{this.demo()}</p>
       <p>{this.props.link}</p>
     </div>
   );
