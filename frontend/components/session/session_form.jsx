@@ -14,8 +14,8 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit(e) {
-  e.preventDefault();
+  handleSubmit() {
+  // e.preventDefault();
   this.props.processForm(this.state);
 }
 
@@ -37,14 +37,14 @@ class SessionForm extends React.Component {
 
 render(){
   if (this.props.user){
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
   const {formType} = this.props;
   return (
     <div>
 
       <h1>{formType}</h1>
-      <p>{this.listErrors()}</p>
+      {this.listErrors()}
       <label>Username:
       <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
       </label>
@@ -52,7 +52,7 @@ render(){
       <input type="text" onChange={this.handleChange('password')} value={this.state.password} />
       </label>
       <button onClick={() => this.handleSubmit()}>{formType}</button>
-      <p>this.props.link</p>
+      <p>{this.props.link}</p>
     </div>
   );
 }
