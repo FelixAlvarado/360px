@@ -28,17 +28,15 @@ class SessionForm extends React.Component {
   listErrors() {
   return(
     <ul>
-      {this.props.errors.map((error) => (
-        <li>{error}</li>
+      {this.props.errors.map((error,i) => (
+        <li key={{i}}>{error}</li>
       ))}
     </ul>
   );
 }
 
 render(){
-  if (this.props.user){
-    return <Redirect to="/home" />;
-  }
+
   const {formType} = this.props;
   return (
     <div>
@@ -49,7 +47,7 @@ render(){
       <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
       </label>
       <label>Password:
-      <input type="text" onChange={this.handleChange('password')} value={this.state.password} />
+      <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
       </label>
       <button onClick={() => this.handleSubmit()}>{formType}</button>
       <p>{this.props.link}</p>
