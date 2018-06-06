@@ -10,7 +10,7 @@ const mapStateToProps = (state,ownProps) => (
   formType: 'Sign Up',
   link: <Link to='/login'>Log In </Link>,
   user: state.entities.users[state.session.id]
-   }  
+  }
 );
 const mapDispatchToProps = () => dispatch => ({
   processForm: (user) => dispatch(signup(user))

@@ -5,11 +5,12 @@ import SignupFormContainer from './session/signup_form_container';
 import Home from './home';
 import {Route, Switch} from 'react-router';
 import {AuthRoute} from '../util/route_util';
+import NavContainer from './nav/nav_container';
 
 const App = () => (
   <div>
     <header>
-    <h1>300 px !!!!!!!</h1>
+    <NavContainer/>
     <GreetingContainer/>
     </header>
     <Switch>
