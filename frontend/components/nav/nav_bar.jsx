@@ -1,16 +1,58 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
+  nav(){
+    const path = this.props.match.path;
+    if (path === "/"){
+      return "nav_bar";
+    }else if (path === "/login") {
+      return "session_bar";
+    }
+  }
+
+  logo(){
+    const path = this.props.match.path;
+    if (path === "/"){
+      return "logo";
+    }else if (path === "/login") {
+      return "session_logo";
+    }
+  }
+
+  sideLink(){
+    const path = this.props.match.path;
+    if (path === "/"){
+      return (
+        <Link className="nav_login" to="/login">Log in</Link>
+      );
+    }
+  }
+
+  sideButton() {
+    const path = this.props.match.path;
+    if (path === "/"){
+      return (
+        <Link to="/signup"><button className="nav_button">Sign up</button></Link>
+      );
+    }else if (path === "/login") {
+      return (
+        <Link to="/signup"><button className="login_signup">Sign up</button></Link>
+      );
+    }
+  }
+
+
+
 render() {
   return (
-    <nav>
-      <Link to="/">360 px</Link>
-      <ul>
-        <li><Link to="/login">Log in</Link></li>
-        <li><Link to="/signup">Sign up</Link></li>
+    <nav className={this.nav()}>
+      <ul className="left_nav">
+      <li><Link to="/" className={this.logo()}>360px</Link></li>
+      </ul>
+      <ul className="right_nav">
+        <li>{this.sideLink()}</li>
+        <li>{this.sideButton()}</li>
       </ul>
     </nav>
   );

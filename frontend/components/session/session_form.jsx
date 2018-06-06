@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import NavContainer from '../nav/nav_container';
+import {Redirect} from 'react-router';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -15,8 +16,10 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit() {
-
   this.props.processForm(this.state);
+  return (
+  <Redirect to="/feed"/>
+  );
 }
 
   handleChange(field) {
@@ -48,8 +51,8 @@ render(){
 
   const {formType} = this.props;
   return (
-    <div>
-
+    <div className="session_container">
+      <NavContainer/>
       <h1>{formType}</h1>
       {this.listErrors()}
       <label>Username:

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import NavBar from './nav_bar';
 
+
 const mapStateToProps = (state,ownProps) => (
    {}
 );

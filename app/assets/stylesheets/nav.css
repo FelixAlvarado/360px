@@ -1,0 +1,103 @@
+.nav_bar {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.nav_bar li {
+  list-style: none;
+}
+
+.left_nav {
+  padding: 0px;
+  margin: 15px 0px 0px 50px;
+}
+
+.right_nav {
+  width: 160px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 15px 50px 0px 0px;
+}
+
+.right_nav li{
+  margin: auto 0px
+}
+
+.logo{
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Rajdhani;
+}
+
+.nav_button{
+  background-color: #00aaff;
+  border-radius: 30px;
+  color: white;
+  height: 30px;
+  width: 90px;
+  font-size: 14px;
+  border-width: 0px
+}
+
+.nav_login {
+  color: white;
+  text-decoration: none;
+  vertical-align: center;
+  font-size: 16px
+}
+
+.nav_button:hover {
+  background-color: #6FB7FE;
+  cursor: pointer;
+}
+
+/* this is for the login nav bar */
+
+.session_bar {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  background-color: white;
+  border-bottom: 1px lightgrey solid;
+  height: 53px;
+}
+
+.session_bar ul{
+  margin-top: 0px;
+  
+}
+
+.session_bar li {
+  list-style: none
+}
+
+.session_container {
+  background-color: #f0f0f5;
+  width: 100vw;
+  height: 100vh;
+}
+
+.session_logo {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Rajdhani;
+}
+
+.login_signup {
+  background-color: #41cb56;
+  color: white;
+  height: 53px;
+  width: 90px;
+  font-size: 14px;
+  border-width: 0px;
+
+}
+
+.login_signup:hover {
+  background-color: #6FB7FE;
+  cursor: pointer;
+}

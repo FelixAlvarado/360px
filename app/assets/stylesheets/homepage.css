@@ -1,0 +1,53 @@
+.homeBackground{
+  background: url(home.png);
+  width: 100vw;
+  height: 100vh;
+}
+
+.home_content{
+  top: 400px;
+  align-content: center;
+  position: absolute;
+   top:40%;
+   left: 0;
+   right: 0;
+   margin: auto;
+}
+
+.home_header {
+  color: white;
+  text-align: center;
+}
+
+.home_p {
+  color: white;
+  text-align: center;
+  margin: 40px 0px
+}
+
+.home_link {
+  text-align: center;
+}
+
+.home_button {
+  background-color: #00aaff;
+  border-radius: 30px;
+  color: white;
+  height: 55px;
+  width: 160px;
+  font-size: 18px;
+  border-width: 0px;
+
+}
+
+.home_button:hover {
+  /* background-color: #3BB0FE; */
+  background-color: #6FB7FE;
+  cursor: pointer;
+
+}
+
+
+.home_link {
+  align-content: center
+}
