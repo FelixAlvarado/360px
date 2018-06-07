@@ -6,7 +6,7 @@ import Home from './home';
 import {Route, Switch} from 'react-router';
 import {AuthRoute, LogRoute} from '../util/route_util';
 import FeedContainer from './feed/feed_container';
-import ProfileContainer from './profile_pages/profile_container';
+import ProfileContainer from './profile/profile_container';
 
 const App = () => (
   <div>
