@@ -6,11 +6,11 @@
 #  username        :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  profile_url     :string           not null
-#  cover_url       :string           not null
 #  description     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  profile_url     :string
+#  cover_url       :string
 #
 
 class User < ApplicationRecord
@@ -19,6 +19,11 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: true
   before_validation :ensure_session_token
+
+  has_many :pictures,
+  primary_key: :id,
+  foreign_key: :uploader_id,
+  class_name: 'Picture'
 
   def self.find_by_credentials(username,password)
     user = User.find_by(username: username)

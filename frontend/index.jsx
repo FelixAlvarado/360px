@@ -4,11 +4,15 @@ import configureStore from './store/store';
 import Root from './components/root';
 import * as APIUtil from './util/session_api_util';
 import * as thunkAction from './actions/session_actions';
+import * as APIPicture from './util/picture_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.logout = thunkAction.logout;
   window.login = thunkAction.login;
   window.signup = thunkAction.signup;
+  window.fetchUserPictures = APIPicture.fetchUserPictures;
+  window.uploadPicture = APIPicture.uploadPicture;
+  window.fetchPicture = APIPicture.fetchPicture;
   let store;
   if (window.currentUser) {
     const preloadedState = {
