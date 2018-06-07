@@ -32,6 +32,10 @@
   font-family: Rajdhani;
 }
 
+.logo:hover {
+  cursor: default;
+}
+
 .nav_button{
   background-color: #00aaff;
   border-radius: 30px;

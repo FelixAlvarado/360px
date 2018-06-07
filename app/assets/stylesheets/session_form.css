@@ -42,6 +42,8 @@
   height: 40px;
   margin-bottom: 20px;
   margin-left: 42px;
+  border-radius: 3px;
+
 }
 
 .login_login:hover {
@@ -58,6 +60,8 @@
   height: 40px;
   margin-bottom: 20px;
   margin-left: 42px;
+  border-radius: 3px;
+
 }
 
 .demo_login:hover{
@@ -72,7 +76,47 @@
   text-align: center;
 }
 
+/* .session_errors {
+  background-color: #f34f50;
+  z-index: 10;
+  position: absolute;
+  margin: 0 auto;
+  padding-left: 0px;
+  margin: auto
+} */
+
 .session_errors li {
-  color: red;
+  color: white;
   list-style: none;
+  text-align: center;
+}
+
+.session_errors:nth-child(odd) {
+  padding: 5px 5px 5px 5px
+}
+
+.session_errors:nth-child(even) {
+  padding: 0px 0px 5px 0px
+}
+
+
+.error_holder_transition ul {
+  background-color: #f34f50;
+  z-index: 10;
+  position: absolute;
+  padding-left: 0px;
+  margin-left: 565px;
+  margin-top: 0px;
+  width: 310px;
+  border-radius: 3px;
+}
+
+.error_holder {
+top: -40px;
+}
+
+.error_holder_transition {
+top: 0px;
+transition-property: top;
+  transition-duration: .5s;
 }

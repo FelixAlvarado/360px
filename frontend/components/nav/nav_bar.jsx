@@ -14,9 +14,13 @@ class NavBar extends React.Component {
   logo(){
     const path = this.props.match.path;
     if (path === "/"){
-      return "logo";
+      return (
+        <Link to="/" className="logo">360px</Link>
+      );
     }else if (path === "/login" || path === "/signup") {
-      return "session_logo";
+      return (
+        <Link to="/" className="session_logo">360px</Link>
+      );
     }
   }
 
@@ -61,7 +65,7 @@ render() {
   return (
     <nav className={this.nav()}>
       <ul className={this.leftNav()}>
-      <li><Link to="/" className={this.logo()}>360px</Link></li>
+      <li>{this.logo()}</li>
       </ul>
       <ul className="right_nav">
         <li>{this.sideLink()}</li>
