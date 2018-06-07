@@ -51,7 +51,7 @@ demo(){
   const {formType} = this.props;
   if (formType === 'Log In'){
     return (
-      <button className="demo_login" onClick={() => this.props.processForm({username:"Felix",password:"password"})}>Demo Login</button>
+      <button className="demo_login" onClick={() => this.props.processForm({username:"user12",password:"password"})}>Demo Login</button>
     );
   }
 }
