@@ -100,23 +100,25 @@
 }
 
 
-.error_holder_transition ul {
+.error_holder ul {
   background-color: #f34f50;
   z-index: 10;
-  position: absolute;
+  position: relative;
   padding-left: 0px;
-  margin-left: 565px;
+  /* margin-left: 565px; */
   margin-top: 0px;
   width: 310px;
   border-radius: 3px;
+  margin: 0 auto
 }
 
 .error_holder {
-top: -40px;
+  width: 100vw;
+  height: 50px;
+  position: absolute;
 }
 
 .error_holder_transition {
-top: 0px;
-transition-property: top;
-  transition-duration: .5s;
+
+
 }

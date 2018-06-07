@@ -93,6 +93,10 @@
   font-family: Rajdhani;
 }
 
+.session_logo:hover {
+  cursor: pointer;
+}
+
 .login_signup {
   background-color: #34bf49;
   color: white;

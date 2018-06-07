@@ -1,7 +1,9 @@
 .homeBackground{
-  background: url(home.png);
+  background: url(https://s33.postimg.cc/addbx4ncv/home.jpg);
   width: 100vw;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size:cover
 }
 
 .home_content{
