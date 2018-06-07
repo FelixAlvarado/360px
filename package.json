@@ -4,8 +4,8 @@
     "npm": "6.0.1"
   },
   "scripts": {
-    "webpack": "webpack --watch -d",
-    "postinstall": "webpack"
+    "webpack": "webpack --watch -d"
+
   },
   "name": "ThreeSixtyPx",
   "private": true,
