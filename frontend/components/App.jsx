@@ -4,8 +4,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Home from './home';
 import {Route, Switch} from 'react-router';
-import {AuthRoute} from '../util/route_util';
-import FeedComponent from './feed';
+import {AuthRoute, LogRoute} from '../util/route_util';
+import FeedContainer from './feed/feed_container';
 
 const App = () => (
   <div>
@@ -13,8 +13,8 @@ const App = () => (
     <AuthRoute exact path="/" component={Home}/>
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
-    <Route path="/feed" component={FeedComponent}/>
-    <Route component={FeedComponent}/>
+    <LogRoute path="/feed" component={FeedContainer}/>
+    <LogRoute component={FeedContainer}/>
     </Switch>
   </div>
 );

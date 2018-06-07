@@ -117,3 +117,88 @@
   padding: 10px;
   margin: 0px 0px 0px 45px;
 }
+/* nav bar css for feed page */
+
+.feed_logo {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Rajdhani;
+  z-index: 20;
+}
+
+.feed_logo:hover {
+  cursor: default;
+}
+
+.upload {
+  background-color: #34bf49;
+  color: white;
+  height: 53px;
+  width: 110px;
+  /* font-size: 14px; */
+  border-width: 0px;
+  z-index: 99;
+  justify-content: space-between;
+  padding: 0;
+    font-size: 20px;
+}
+
+.icon_upload {
+  margin-right: 7px;
+}
+
+.font_overide {
+  font-size: 14px;
+}
+
+.upload:hover {
+  background-color:  #41cb56;
+  cursor: pointer;
+}
+
+.profile-icon {
+  border-radius: 50%;
+  background-color: grey;
+  height: 25px;
+  width: 25px;
+  position: relative;
+}
+/* had to user css friends phase2 for help with the hamburger menu */
+.profile-icon:hover .profile-list {
+  display: block
+}
+
+.profile-list {
+  display: none;
+position: absolute;
+left: -30px;
+font-size: 14px;
+white-space: nowrap;
+background: #fff;
+overflow: hidden;
+padding: 0px;
+top: 25px;
+}
+
+.profile-list > li {
+  width: 80px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.profile-link {
+text-decoration: none;
+color: black;
+}
+
+.profile-link:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.profile-list > li:hover {
+  color: blue;
+  cursor: pointer;
+}

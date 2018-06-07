@@ -6,14 +6,13 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "nav_bar";
-    }else if (path === "/login" || path === "/signup") {
+    }else if (path === "/login" || path === "/signup" || path === "/feed") {
       return "session_bar";
     }
   }
 
   logo(){
     const path = this.props.match.path;
-    console.log(this.props);
     if (path === "/"){
       return (
         <Link to="/" className="logo">360px</Link>
@@ -21,6 +20,11 @@ class NavBar extends React.Component {
     }else if (path === "/login" || path === "/signup") {
       return (
         <Link to="/" className="session_logo">360px</Link>
+      );
+    }
+    else if (path === "/feed") {
+      return (
+        <Link to="/feed" className="feed_logo">360px</Link>
       );
     }
   }
@@ -31,7 +35,17 @@ class NavBar extends React.Component {
       return (
         <Link className="nav_login" to="/login">Log in</Link>
       );
-    }
+    }   else if (path === "/feed"){
+          return (
+
+            <div className="profile-icon">
+              <ul className="profile-list">
+                <li><Link to="/profile" className = "profile-link">Profile</Link></li>
+                <li onClick={() => this.props.logout()}>Logout</li>
+              </ul>
+            </div>
+          );
+        }
   }
 
   sideButton() {
@@ -46,7 +60,11 @@ class NavBar extends React.Component {
       );
     } else if (path === "/signup") {
       return (
-        <Link to="/login"><button className="login_signup">Login</button></Link>
+        <Link to="/login"><button className="login_signup">Upload</button></Link>
+      );
+    }else if (path === "/feed") {
+      return (
+        <button className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );
     }
   }
@@ -55,7 +73,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "left_nav";
-    }else if (path === "/login" || path === "/signup") {
+    }else if (path === "/login" || path === "/signup" || path === "/feed") {
       return "login_left";
     }
   }
