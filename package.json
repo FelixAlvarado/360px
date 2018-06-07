@@ -1,6 +1,11 @@
 {
+  "engines": {
+    "node": "8.9.4",
+    "npm": "6.0.1"
+  },
   "scripts": {
-    "webpack": "webpack --watch -d"
+    "webpack": "webpack --watch -d",
+    "postinstall": "webpack"
   },
   "name": "ThreeSixtyPx",
   "private": true,
