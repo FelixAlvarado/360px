@@ -202,3 +202,16 @@ color: black;
   color: blue;
   cursor: pointer;
 }
+
+/* nav bar styling for profile page */
+.profile_logo {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Rajdhani;
+  z-index: 20;
+}
+
+.profile_logo:hover {
+  cursor: pointer;
+}

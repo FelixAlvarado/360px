@@ -6,7 +6,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "nav_bar";
-    }else if (path === "/login" || path === "/signup" || path === "/feed") {
+    }else {
       return "session_bar";
     }
   }
@@ -27,6 +27,11 @@ class NavBar extends React.Component {
         <Link to="/feed" className="feed_logo">360px</Link>
       );
     }
+    else if (path === "/profile") {
+      return (
+        <Link to="/feed" className="profile_logo">360px</Link>
+      );
+    }
   }
 
   sideLink(){
@@ -35,7 +40,7 @@ class NavBar extends React.Component {
       return (
         <Link className="nav_login" to="/login">Log in</Link>
       );
-    }   else if (path === "/feed"){
+    }   else if (path === "/feed" || path === "/profile"){
           return (
 
             <div className="profile-icon">
@@ -62,7 +67,7 @@ class NavBar extends React.Component {
       return (
         <Link to="/login"><button className="login_signup">Upload</button></Link>
       );
-    }else if (path === "/feed") {
+    }else if (path === "/feed" || path === "/profile") {
       return (
         <button className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );
@@ -73,7 +78,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "left_nav";
-    }else if (path === "/login" || path === "/signup" || path === "/feed") {
+    }else  {
       return "login_left";
     }
   }

@@ -6,6 +6,7 @@ import Home from './home';
 import {Route, Switch} from 'react-router';
 import {AuthRoute, LogRoute} from '../util/route_util';
 import FeedContainer from './feed/feed_container';
+import ProfileContainer from './profile/profile_container';
 
 const App = () => (
   <div>
@@ -13,6 +14,7 @@ const App = () => (
     <AuthRoute exact path="/" component={Home}/>
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
+    <LogRoute path="/profile" component={ProfileContainer} />
     <LogRoute path="/feed" component={FeedContainer}/>
     <LogRoute component={FeedContainer}/>
     </Switch>
