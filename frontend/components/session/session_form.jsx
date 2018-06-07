@@ -15,8 +15,12 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+
+
   handleSubmit() {
-  this.props.processForm(this.state);
+    const username = this.state.username;
+    const password = this.state.password;
+   this.props.processForm(this.state);
   return (
   <Redirect to="/feed"/>
   );
@@ -30,7 +34,7 @@ class SessionForm extends React.Component {
 
   listErrors() {
   return(
-    <ul>
+    <ul className="session_errors">
       {this.props.errors.map((error,i) => (
         <li key={i}>{error}</li>
       ))}
@@ -42,7 +46,20 @@ demo(){
   const {formType} = this.props;
   if (formType === 'Log In'){
     return (
-      <button onClick={() => this.props.processForm({username:"user1",password:"password"})}>Demo Login</button>
+      <button className="demo_login" onClick={() => this.props.processForm({username:"user1",password:"password"})}>Demo Login</button>
+    );
+  }
+}
+
+bottomLink() {
+  const {formType} = this.props;
+  if (formType === 'Log In'){
+    return (
+      <p className="signup_link">Don't have an account? {this.props.link}</p>
+    );
+  } else {
+    return (
+    <p className="signup_link">Already have an account? {this.props.link}</p>
     );
   }
 }
@@ -53,17 +70,23 @@ render(){
   return (
     <div className="session_container">
       <NavContainer/>
-      <h1>{formType}</h1>
+      <div className="session_form">
+      <h2 className="session_header">{formType}</h2>
       {this.listErrors()}
-      <label>Username:
+      <br/>
+
+      <label>Username:</label>
+        <br/>
       <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
-      </label>
-      <label>Password:
+      <br/>
+      <label>Password:</label>
       <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
-      </label>
-      <button onClick={() => this.handleSubmit()}>{formType}</button>
-      <p>{this.demo()}</p>
-      <p>{this.props.link}</p>
+      <br/>
+      <button className="login_login" onClick={() => this.handleSubmit()}>{formType}</button>
+      <br/>
+      {this.demo()}
+      {this.bottomLink()}
+      </div>
     </div>
   );
 }

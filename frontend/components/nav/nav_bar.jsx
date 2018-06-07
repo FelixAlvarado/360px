@@ -6,7 +6,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "nav_bar";
-    }else if (path === "/login") {
+    }else if (path === "/login" || path === "/signup") {
       return "session_bar";
     }
   }
@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/"){
       return "logo";
-    }else if (path === "/login") {
+    }else if (path === "/login" || path === "/signup") {
       return "session_logo";
     }
   }
@@ -39,6 +39,19 @@ class NavBar extends React.Component {
       return (
         <Link to="/signup"><button className="login_signup">Sign up</button></Link>
       );
+    } else if (path === "/signup") {
+      return (
+        <Link to="/login"><button className="login_signup">Login</button></Link>
+      );
+    }
+  }
+
+  leftNav(){
+    const path = this.props.match.path;
+    if (path === "/"){
+      return "left_nav";
+    }else if (path === "/login" || path === "/signup") {
+      return "login_left";
     }
   }
 
@@ -47,7 +60,7 @@ class NavBar extends React.Component {
 render() {
   return (
     <nav className={this.nav()}>
-      <ul className="left_nav">
+      <ul className={this.leftNav()}>
       <li><Link to="/" className={this.logo()}>360px</Link></li>
       </ul>
       <ul className="right_nav">

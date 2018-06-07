@@ -1,0 +1,78 @@
+.session_form {
+  background-color: white;
+  width: 400px;
+  height: 500px;
+  border: 1px lightgrey solid;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.session_form > label {
+  color: grey;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-left: 42px;
+}
+
+.session_form > input {
+  height: 35px;
+  width: 316px;
+  margin-left: 42px;
+  margin-top: 5px;
+  margin-bottom: 35px;
+
+}
+
+.session_header {
+  color: grey;
+  font-family: Rajdhani;
+  text-align: center;
+}
+
+.login_login {
+  width: 316px;
+  background-color: #34bf49;
+  color: white;
+  font-size: 16px;
+  border-width: 0px;
+  height: 40px;
+  margin-bottom: 20px;
+  margin-left: 42px;
+}
+
+.login_login:hover {
+  background-color:  #41cb56;
+  cursor: pointer;
+}
+
+.demo_login {
+  width: 316px;
+  background-color: #00aaff;
+  color: white;
+  font-size: 16px;
+  border-width: 0px;
+  height: 40px;
+  margin-bottom: 20px;
+  margin-left: 42px;
+}
+
+.demo_login:hover{
+  background-color:#6FB7FE;
+  cursor: pointer;
+}
+
+.signup_link {
+  color: grey;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.session_errors li {
+  color: red;
+  list-style: none;
+}

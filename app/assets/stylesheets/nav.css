@@ -65,9 +65,11 @@
   height: 53px;
 }
 
+
+
 .session_bar ul{
   margin-top: 0px;
-  
+
 }
 
 .session_bar li {
@@ -88,7 +90,7 @@
 }
 
 .login_signup {
-  background-color: #41cb56;
+  background-color: #34bf49;
   color: white;
   height: 53px;
   width: 90px;
@@ -98,6 +100,11 @@
 }
 
 .login_signup:hover {
-  background-color: #6FB7FE;
+  background-color:  #41cb56;
   cursor: pointer;
+}
+
+.login_left {
+  padding: 10px;
+  margin: 0px 0px 0px 45px;
 }
