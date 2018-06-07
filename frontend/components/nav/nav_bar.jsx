@@ -13,6 +13,7 @@ class NavBar extends React.Component {
 
   logo(){
     const path = this.props.match.path;
+    console.log(this.props);
     if (path === "/"){
       return (
         <Link to="/" className="logo">360px</Link>

@@ -105,7 +105,6 @@
   z-index: 10;
   position: relative;
   padding-left: 0px;
-  /* margin-left: 565px; */
   margin-top: 0px;
   width: 310px;
   border-radius: 3px;
@@ -114,8 +113,8 @@
 
 .error_holder {
   width: 100vw;
-  height: 50px;
   position: absolute;
+  z-index:1;
 }
 
 .error_holder_transition {

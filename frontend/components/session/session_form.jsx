@@ -74,10 +74,10 @@ render(){
   const {formType} = this.props;
   return (
     <div className="session_container">
-      <div className="error_holder">
-      {this.listErrors()}
-      </div>
       <NavContainer/>
+        <div className="error_holder">
+        {this.listErrors()}
+        </div>
       <div className="session_form">
       <h2 className="session_header">{formType}</h2>
       <br/>

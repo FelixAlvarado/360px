@@ -91,6 +91,7 @@
   text-decoration: none;
   font-size: 30px;
   font-family: Rajdhani;
+  z-index: 20;
 }
 
 .session_logo:hover {
@@ -104,7 +105,7 @@
   width: 90px;
   font-size: 14px;
   border-width: 0px;
-
+  z-index: 20;
 }
 
 .login_signup:hover {
