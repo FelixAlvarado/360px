@@ -65,7 +65,7 @@ class NavBar extends React.Component {
       );
     } else if (path === "/signup") {
       return (
-        <Link to="/login"><button className="login_signup">Upload</button></Link>
+        <Link to="/login"><button className="login_signup">Login</button></Link>
       );
     }else if (path === "/feed" || path === "/profile") {
       return (
