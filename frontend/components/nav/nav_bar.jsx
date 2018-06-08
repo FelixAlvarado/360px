@@ -3,11 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
-  componentDidMount () {
-    console.log(this.props);
-    this.props.openModal({string:'upload', picture: this.props.picture});
-  }
-
   nav(){
     const path = this.props.match.path;
     if (path === "/"){

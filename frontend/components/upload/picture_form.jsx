@@ -24,11 +24,10 @@ class PictureForm extends React.Component {
   render() {
   return (
     <div>
-      <label className="upload-label">Photo</label>
-      <br/>
+      <span className="close-font-upload"><i onClick={() => this.props.closeModal()} className="fa fa-close upload-close"></i></span>
       <img className="form-image" src={this.props.picture.url}/>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label className="upload-label2">Title</label>
+          <label className="upload-label">Title</label>
           <br/>
           <input className="upload-input" placeholder="(optional)" type="text" value={this.state.title} onChange={this.handleChange()} />
           <br/>
