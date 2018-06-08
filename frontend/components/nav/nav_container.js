@@ -15,12 +15,8 @@ const mapStateToProps = ({entities, session}) => (
 const mapDispatchToProps = () => dispatch => ({
   logout: () => dispatch(logout()),
   uploadPicture: (picture, userId) => dispatch(uploadPicture(picture, userId)),
-  otherForm: (
-      <button onClick={() => dispatch(openModal('upload'))}>
-        Signup
-      </button>
-    ),
-    closeModal: () => dispatch(closeModal())
+  openModal: () => dispatch(openModal('upload')),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

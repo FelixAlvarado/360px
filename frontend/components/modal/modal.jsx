@@ -1,21 +1,21 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NavBarContainer from '../nav/nav_container';
+import UploadPictureContainer from '../upload/upload_picture_container';
 
-function Modal({modal, closeModal}) {
+const Modal = ({modal}) => {
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
     case 'upload':
-      component = <NavBar />;
+      component = <UploadPictureContainer />;
       break;
     default:
       return null;
   }
-  
+
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -23,7 +23,7 @@ function Modal({modal, closeModal}) {
       </div>
     </div>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
