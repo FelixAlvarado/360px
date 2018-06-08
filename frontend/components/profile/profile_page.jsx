@@ -6,10 +6,10 @@ class ProfilePage extends React.Component {
     super(props);
   }
 
-  componentDidMount () {
-
+  componentWillMount () {
     this.props.getUserPictures(this.props.currentUser.id);
   }
+
   render() {
     const pictures = this.props.pictures.map((picture) => {
       return <PhotoListItem key={picture.id} picture={picture}/>;

@@ -7,9 +7,11 @@ import {Route, Switch} from 'react-router';
 import {AuthRoute, LogRoute} from '../util/route_util';
 import FeedContainer from './feed/feed_container';
 import ProfileContainer from './profile/profile_container';
+import Modal from './modal/modal';
 
 const App = () => (
   <div>
+    <Modal />
     <Switch>
     <AuthRoute exact path="/" component={Home}/>
     <AuthRoute path="/login" component={LoginFormContainer} />
