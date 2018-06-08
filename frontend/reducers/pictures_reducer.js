@@ -5,7 +5,7 @@ const picturesReducer = (initialState = {}, action) => {
   Object.freeze(initialState);
   switch (action.type){
     case RECEIVE_PICTURE:
-    return merge(initialState, {[action.picture.id]:action.picture});
+    return merge({}, initialState, {[action.picture.id]:action.picture});
     case RECEIVE_PICTURES:
     return merge({}, action.pictures);
     default:

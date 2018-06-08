@@ -69,7 +69,7 @@ class NavBar extends React.Component {
       );
     }else if (path === "/feed" || path === "/profile") {
       return (
-        <button className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
+        <button onClick={(e) => this.uploadPicture(e)} className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );
     }
   }
@@ -83,6 +83,15 @@ class NavBar extends React.Component {
     }
   }
 
+  uploadPicture(e) {
+    e.preventDefault();
+    const currentUserId = this.props.currentUser.id;
+    cloudinary.openUploadWidget(window.cloudinary_options, (error, picture) => {
+      if (error === null){
+        this.props.uploadPicture({image_url:picture[0].url}, currentUserId);
+      }
+    });
+  }
 
 
 render() {

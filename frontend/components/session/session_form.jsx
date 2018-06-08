@@ -15,7 +15,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount () {
-    console.log('here');
     this.props.clear();
   }
 

@@ -1,10 +1,12 @@
 class Api::PicturesController < ApplicationController
 
   def create
-    picture = Picture.new(picture_params)
-    picture.uploader_id = params[:user_id]
-      unless picture.save
-        render json: picture.errors.full_messages, status: 422
+    @picture = Picture.new(picture_params)
+    @picture.uploader_id = params[:user_id]
+      if @picture.save
+        render :show
+      else
+        render json: @picture.errors.full_messages, status: 422
       end
   end
 
