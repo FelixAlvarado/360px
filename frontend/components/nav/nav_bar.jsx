@@ -2,6 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
+
+  componentDidMount () {
+    console.log(this.props);
+    this.props.openModal({string:'upload', picture: this.props.picture});
+  }
+
   nav(){
     const path = this.props.match.path;
     if (path === "/"){
@@ -88,8 +94,7 @@ class NavBar extends React.Component {
     const currentUserId = this.props.currentUser.id;
     cloudinary.openUploadWidget(window.cloudinary_options, (error, picture) => {
       if (error === null){
-        this.props.openModal();
-        // this.props.uploadPicture({image_url:picture[0].url}, currentUserId);
+            this.props.openModal({string:'upload', picture: picture[0]});
       }
     });
   }

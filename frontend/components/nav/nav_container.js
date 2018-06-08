@@ -9,13 +9,14 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({entities, session}) => (
    {
-     currentUser: entities.users[session.id]
+     currentUser: entities.users[session.id],
+     picture: entities
    }
 );
 const mapDispatchToProps = () => dispatch => ({
   logout: () => dispatch(logout()),
   uploadPicture: (picture, userId) => dispatch(uploadPicture(picture, userId)),
-  openModal: () => dispatch(openModal('upload')),
+  openModal: (modal) => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal())
 });
 

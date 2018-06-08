@@ -3,12 +3,12 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import UploadPictureContainer from '../upload/upload_picture_container';
 
-const Modal = ({modal}) => {
+const Modal = ({modal, closeModal}) => {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.string) {
     case 'upload':
       component = <UploadPictureContainer />;
       break;
