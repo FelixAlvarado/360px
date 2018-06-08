@@ -5,6 +5,7 @@ import Root from './components/root';
 import * as APIUtil from './util/session_api_util';
 import * as thunkAction from './actions/session_actions';
 import * as APIPicture from './util/picture_api_util';
+import * as pictureAction from './actions/picture_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.logout = thunkAction.logout;
@@ -13,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPictures = APIPicture.fetchUserPictures;
   window.uploadPicture = APIPicture.uploadPicture;
   window.fetchPicture = APIPicture.fetchPicture;
+  window.getUserPictures = pictureAction.getUserPictures;
+  window.getUserPicture = pictureAction.getUserPicture;
   let store;
   if (window.currentUser) {
     const preloadedState = {

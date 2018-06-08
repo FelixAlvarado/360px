@@ -15,9 +15,9 @@ export const receivePicture = (picture) => ({
 });
 
 export const getUserPictures = (userId) => dispatch => {
-  return APIPictures.fetchPictures(userId).then(pictures => dispatch(receivePictures(pictures)));
+  return APIPictures.fetchUserPictures(userId).then(pictures => dispatch(receivePictures(pictures)));
 };
 
 export const getUserPicture = (pictureId) => dispatch => {
-  return APIPictures.fetchPictures(pictureId).then(picture => dispatch(receivePictures(picture)));
+  return APIPictures.fetchUserPicture(pictureId).then(picture => dispatch(receivePicture(picture)));
 };
