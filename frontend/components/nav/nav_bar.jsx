@@ -13,6 +13,7 @@ class NavBar extends React.Component {
   }
 
   logo(){
+    
     const path = this.props.match.path;
     if (path === "/"){
       return (
