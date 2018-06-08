@@ -81,7 +81,7 @@ render(){
       <div className="session_form">
       <h2 className="session_header">{formType}</h2>
       <br/>
-
+        <form className="internal-session-form" onSubmit={() => this.handleSubmit()}>
       <label>Username:</label>
         <br/>
       <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
@@ -89,7 +89,8 @@ render(){
       <label>Password:</label>
       <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
       <br/>
-      <button className="login_login" onClick={() => this.handleSubmit()}>{formType}</button>
+      <button type="submit" className="login_login">{formType}</button>
+      </form>
       <br/>
       {this.demo()}
       {this.bottomLink()}

@@ -11,14 +11,14 @@
   left: 0;
 }
 
-.session_form > label {
+.internal-session-form > label {
   color: grey;
   font-family: sans-serif;
   font-size: 14px;
   margin-left: 42px;
 }
 
-.session_form > input {
+.internal-session-form > input {
   height: 35px;
   width: 316px;
   margin-left: 42px;
