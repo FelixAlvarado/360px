@@ -14,13 +14,15 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount () {
+  componentWillMount () {
+    console.log('here');
     this.props.clear();
   }
 
 
 
-  handleSubmit() {
+  handleSubmit(e) {
+      e.preventDefault();
     const username = this.state.username;
     const password = this.state.password;
    this.props.processForm(this.state);
@@ -81,15 +83,15 @@ render(){
       <div className="session_form">
       <h2 className="session_header">{formType}</h2>
       <br/>
-        <form className="internal-session-form" onSubmit={() => this.handleSubmit()}>
+        <form className="internal-session-form" onSubmit={(e) => this.handleSubmit(e)}>
       <label>Username:</label>
         <br/>
-      <input type="text" onChange={this.handleChange('username')} value={this.state.username}/>
+      <input type="text" className="form-input" onChange={this.handleChange('username')} value={this.state.username}/>
       <br/>
       <label>Password:</label>
-      <input type="password" onChange={this.handleChange('password')} value={this.state.password} />
+      <input type="password" className="form-input" onChange={this.handleChange('password')} value={this.state.password} />
       <br/>
-      <button type="submit" className="login_login">{formType}</button>
+      <input type="submit" className="login_login" value={formType}/>
       </form>
       <br/>
       {this.demo()}
