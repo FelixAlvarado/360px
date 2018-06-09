@@ -2,6 +2,8 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER =  'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_USER = 'RECEIVE_USER';
+export const REMOVE_USER = 'CLEAR_USER';
 import * as APIUtil from '../util/session_api_util';
 
 export const receiveCurrentUser = (currentUser) => {
@@ -29,6 +31,23 @@ export const clearErrors = () => {
     type: CLEAR_ERRORS
 
   };
+};
+
+export const receiveUser = (user) => {
+  return {
+    type: RECEIVE_USER,
+    user
+  };
+};
+
+export const removeUser = (user) => {
+  return {type: REMOVE_USER, user};
+};
+
+export const getUser = (user) => dispatch => {
+  return APIUtil.fetchUser(user)
+  .then((user) =>
+    dispatch(receiveUser(user)));
 };
 
 

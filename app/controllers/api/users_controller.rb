@@ -11,6 +11,13 @@ def create
   end
 end
 
+
+def show
+    @user = User.find_by(id: params['id'])
+    render :show
+end
+
+
 def update
 
 end

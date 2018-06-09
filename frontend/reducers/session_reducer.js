@@ -1,5 +1,5 @@
 import {RECEIVE_CURRENT_USER,
-    LOGOUT_CURRENT_USER} from '../actions/session_actions.js';
+    LOGOUT_CURRENT_USER, REMOVE_USER} from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 
 const defaultUser = Object.freeze({
@@ -13,6 +13,10 @@ const sessionReducer = (state = defaultUser, action) => {
       return { id: action.currentUser.id };
     case LOGOUT_CURRENT_USER:
       return defaultUser;
+    case REMOVE_USER:
+      const newState = merge({}, state);
+      delete newState[action.user.id];
+      return newState;
     default:
       return state;
   }

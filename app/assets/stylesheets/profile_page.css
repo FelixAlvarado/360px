@@ -6,7 +6,16 @@
 
 .profile-photo {
   height: 258px;
-  width: 300px
+  width: 300px;
+  transition-property: filter;
+  transition-duration: .5s;
+}
+
+.profile-photo:hover {
+  filter: drop-shadow(8px 8px 8px black);
+  cursor: pointer;
+  transition-property: filter;
+  transition-duration: .5s;
 }
 
 .picture-list {

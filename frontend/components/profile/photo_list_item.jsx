@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PhotoListItem = ({picture}) => {
+const PhotoListItem = ({picture, openModal}) => {
   return (
-  <li><img className="profile-photo" src={picture.image_url}/></li>
+  <li onClick={() => openModal({string:'show',picture: picture})}><img className="profile-photo" src={picture.image_url}/></li>
   );
 };
 

@@ -2,6 +2,7 @@ import * as APIPictures from '../util/picture_api_util';
 
 export const RECEIVE_PICTURE = 'RECEIVE_PICTURE';
 export const RECEIVE_PICTURES = 'RECEIVE_PICTURES';
+export const CLEAR_PICTURES = 'CLEAR_PICTURES';
 
 
 export const receivePictures = (pictures) => ({
@@ -13,6 +14,11 @@ export const receivePicture = (picture) => {
 
   return {type: RECEIVE_PICTURE,
   picture};
+};
+
+export const clearPictures = () => {
+  console.log("made it!")
+  return {type: CLEAR_PICTURES};
 };
 
 export const getUserPictures = (userId) => dispatch => {

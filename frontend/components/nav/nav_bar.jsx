@@ -13,7 +13,7 @@ class NavBar extends React.Component {
   }
 
   logo(){
-    
+
     const path = this.props.match.path;
     if (path === "/"){
       return (
@@ -29,11 +29,17 @@ class NavBar extends React.Component {
         <Link to="/feed" className="feed_logo">360px</Link>
       );
     }
-    else if (path === "/profile") {
+    else if (path.includes("profile")) {
       return (
-        <Link to="/feed" className="profile_logo">360px</Link>
+        <Link to="/feed" onClick={() => this.props.clearPictures()} className="profile_logo">360px</Link>
       );
     }
+  }
+
+  updateState(num){
+    this.props.getUserPictures(num);
+    this.props.getUser(num);
+
   }
 
   sideLink(){
@@ -42,12 +48,12 @@ class NavBar extends React.Component {
       return (
         <Link className="nav_login" to="/login">Log in</Link>
       );
-    }   else if (path === "/feed" || path === "/profile"){
+    }   else if (path === "/feed" || path.includes("profile")) {
           return (
 
             <div className="profile-icon">
               <ul className="profile-list">
-                <li><Link to="/profile" className = "profile-link">Profile</Link></li>
+                <li><Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>
@@ -69,7 +75,7 @@ class NavBar extends React.Component {
       return (
         <Link to="/login"><button className="login_signup">Login</button></Link>
       );
-    }else if (path === "/feed" || path === "/profile") {
+    }else if (path === "/feed" || path.includes("profile")) {
       return (
         <button onClick={(e) => this.uploadPicture(e)} className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );

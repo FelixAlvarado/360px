@@ -1,0 +1,9 @@
+.show-image{
+  width: 700px;
+  height: 700px;
+}
+
+.show-title {
+  margin: 0px;
+  display: inline
+}

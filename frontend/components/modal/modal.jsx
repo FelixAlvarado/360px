@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import UploadPictureContainer from '../upload/upload_picture_container';
+import ShowPictureContainer from '../show/show_picture_container';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -12,10 +13,13 @@ const Modal = ({modal, closeModal}) => {
     case 'upload':
       component = <UploadPictureContainer />;
       break;
+    case 'show':
+      component = <ShowPictureContainer />;
+      break;
     default:
       return null;
   }
-
+if (modal.string === 'upload'){
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -23,6 +27,15 @@ const Modal = ({modal, closeModal}) => {
       </div>
     </div>
   );
+} else if (modal.string === 'show') {
+  return (
+    <div className="modal-background" onClick={closeModal}>
+      <div className="modal-child-show" onClick={e => e.stopPropagation()}>
+        { component }
+      </div>
+    </div>
+  );
+}
 };
 
 const mapStateToProps = state => {

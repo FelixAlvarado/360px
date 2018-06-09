@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchPicture = APIPicture.fetchPicture;
   window.getUserPictures = pictureAction.getUserPictures;
   window.getUserPicture = pictureAction.getUserPicture;
+  window.fetchUser = APIUtil.fetchUser;
+  window.getUser = thunkAction.getUser;
   let store;
   if (window.currentUser) {
     const preloadedState = {
