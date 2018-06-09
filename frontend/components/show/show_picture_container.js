@@ -7,7 +7,8 @@ import {} from '../../actions/picture_actions';
 const mapStateToProps = ({session, entities:{users},ui:{modal}}) => (
    {
      currentUser: users[session.id],
-     picture: modal.picture
+     picture: modal.picture,
+     user: modal.user
    }
 );
 const mapDispatchToProps = () => dispatch => ({

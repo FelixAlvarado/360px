@@ -16,7 +16,7 @@ class ProfilePage extends React.Component {
 
   render() {
     const pictures = this.props.pictures.map((picture) => {
-      return <PhotoListItem openModal={this.props.openModal} key={picture.id} picture={picture}/>;
+      return <PhotoListItem openModal={this.props.openModal} key={picture.id} picture={picture} user={this.props.user}/>;
         });
     return (
       <div className="profile-holder">

@@ -1,9 +1,46 @@
 .show-image{
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
 }
 
+
+
 .show-title {
-  margin: 0px;
-  display: inline
+  font-family: Rajdhani;
+  text-align: center;
+}
+
+.show-username {
+  margin-left: 5px
+}
+.show-div {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-div div {
+
+}
+
+.image-placeholder{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: grey;
+  float: left;
+  margin-left: 10px
+
+}
+
+.show-child-1 {
+
+}
+
+.show-child-2 {
+  position: relative;
+  width: 200px;
+  height: 600px;
+  /* text-align: center; */
 }

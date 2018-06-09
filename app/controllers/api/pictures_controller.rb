@@ -10,6 +10,20 @@ class Api::PicturesController < ApplicationController
       end
   end
 
+  def update
+    @picture = Picture.find_by(id: params[:id])
+      if @picture.update(picture_params)
+        render :show
+      else
+        render json: @picture.errors.full_messages, status: 422
+      end
+  end
+
+  def destroy
+    @picture = Picture.find_by(id: params[:id])
+    @picture.destroy
+  end
+
   def index
     # the params thing may be wrong. going to have to check this out when I test
     puts params
