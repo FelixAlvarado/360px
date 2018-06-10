@@ -36,3 +36,42 @@
   list-style: none;
   margin: 0px 5px 5px 0px;
 }
+
+.following {
+  background-color: #34bf49;
+  color: white;
+  border-radius: 10%;
+  font-size: 14px;
+  width: 78px;
+  height: 28px;
+}
+
+.following:hover span {
+  display: none;
+}
+
+.following:hover:before {
+  content: "Unfollow"
+}
+
+
+
+.following:hover {
+  background-color: #ff3333;
+  cursor: pointer;
+}
+
+.follow {
+  background-color: #00aaff;
+  content: "Follow";
+  color: white;
+  font-size: 14px;
+  width: 78px;
+  height: 28px;
+}
+
+.follow:hover {
+  background-color: #6FB7FE;
+  content: "Follow";
+  cursor: pointer;
+}

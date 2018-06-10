@@ -12,6 +12,16 @@ class ShowPictureComponent extends React.Component {
     }
   }
 
+  buttonDisplay() {
+    if (this.props.currentUser.id === this.props.picture.uploader_id){
+      return (
+        <div>
+        <button onClick={() => this.handleEdit()}  className="button1">Edit</button>
+        <button onClick={() => this.handleDelete()} className="button2">Delete</button>
+        </div>
+      );
+    }
+  }
   handleDelete() {
     this.props.deletePicture(this.props.picture.id);
     this.props.closeModal();
@@ -32,8 +42,7 @@ class ShowPictureComponent extends React.Component {
             <span className="show-username"><Link className={`show-link ${this.nameLink()}`} to={`/profile/${this.props.user.id}`} >{this.props.user.username}</Link></span></p>
             <h2 className="show-title">{this.props.picture.title}</h2>
             <div className="button-holder">
-              <button onClick={() => this.handleEdit()}  className="button1">Edit</button>
-              <button onClick={() => this.handleDelete()} className="button2">Delete</button>
+              {this.buttonDisplay()}
             </div>
 
         </div>
