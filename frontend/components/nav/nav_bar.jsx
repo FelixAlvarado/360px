@@ -52,7 +52,7 @@ class NavBar extends React.Component {
       const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
-            <img className="profile-icon" src={defaultProfile} />
+            <Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
                 <li><Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>

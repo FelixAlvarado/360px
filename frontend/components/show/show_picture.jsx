@@ -55,12 +55,13 @@ class ShowPictureComponent extends React.Component {
   }
 
   render() {
+    const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
     return (
       <div className="show-div">
 
         <div className="show-child-1"><img className='show-image' src={`${this.props.picture.image_url}`}/></div>
           <div className="show-child-2">
-            <p> <img className = "image-placeholder" src="https://s15.postimg.cc/8agnin31n/seth_curry.jpg" />
+            <p> <img className = "image-placeholder" src={defaultProfile} />
             <span className="show-username"><Link className={`show-link ${this.nameLink()}`} to={`/profile/${this.props.user.id}`} >{this.props.user.username}</Link></span>{this.followButton()}</p>
 
             <h1 className="show-title">{this.props.picture.title}</h1>
