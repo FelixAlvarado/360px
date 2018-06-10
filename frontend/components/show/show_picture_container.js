@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import ShowPictureComponent from './show_picture';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 import {deletePicture, updatePicture} from '../../actions/picture_actions';
 
 const mapStateToProps = ({session, entities:{users},ui:{modal}}) => (
@@ -14,7 +14,8 @@ const mapStateToProps = ({session, entities:{users},ui:{modal}}) => (
 const mapDispatchToProps = () => dispatch => ({
   closeModal: () => dispatch(closeModal()),
   deletePicture: (photoId) => dispatch(deletePicture(photoId)),
-  updatePicture: () => dispatch(updatePicture())
+  updatePicture: (photo) => dispatch(updatePicture(photo)),
+  openModal: (object) => dispatch(openModal(object))
 
 });
 

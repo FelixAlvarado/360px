@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import PictureForm from './picture_form';
+import PictureForm from '../upload/picture_form';
 import { closeModal } from '../../actions/modal_actions';
-import {uploadPicture} from '../../actions/picture_actions';
+import {updatePicture} from '../../actions/picture_actions';
 
 const mapStateToProps = ({session, entities:{users},ui:{modal}}) => (
    {
@@ -11,7 +11,7 @@ const mapStateToProps = ({session, entities:{users},ui:{modal}}) => (
    }
 );
 const mapDispatchToProps = () => dispatch => ({
-  action: (picture, userId) => dispatch(uploadPicture(picture, userId)),
+  action: (picture) => dispatch(updatePicture(picture)),
   closeModal: () => dispatch(closeModal())
 });
 
