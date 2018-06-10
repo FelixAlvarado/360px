@@ -159,26 +159,26 @@
 
 .profile-icon {
   border-radius: 50%;
-  background-color: grey;
+  /* background-color: grey; */
   height: 25px;
   width: 25px;
   position: relative;
 }
 /* had to user css friends phase2 for help with the hamburger menu */
-.profile-icon:hover .profile-list {
+.side-holder:hover .profile-list {
   display: block
 }
 
 .profile-list {
   display: none;
 position: absolute;
-left: -30px;
+left: 10px;
 font-size: 14px;
 white-space: nowrap;
 background: #fff;
 overflow: hidden;
 padding: 0px;
-top: 25px;
+top: 40px;
 }
 
 .profile-list > li {

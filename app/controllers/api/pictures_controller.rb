@@ -11,7 +11,7 @@ class Api::PicturesController < ApplicationController
   end
 
   def update
-    @picture = Picture.find_by(id: params[:id])
+    @picture = Picture.find_by(id: params[:id].to_i)
       if @picture.update(picture_params)
         render :show
       else
@@ -22,6 +22,7 @@ class Api::PicturesController < ApplicationController
   def destroy
     @picture = Picture.find_by(id: params[:id])
     @picture.destroy
+    render :show
   end
 
   def index

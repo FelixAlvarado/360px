@@ -1,4 +1,4 @@
-import {RECEIVE_PICTURE, RECEIVE_PICTURES, CLEAR_PICTURES} from '../actions/picture_actions';
+import {RECEIVE_PICTURE, RECEIVE_PICTURES, CLEAR_PICTURES, REMOVE_PICTURE} from '../actions/picture_actions';
 import merge from 'lodash/merge';
 
 const picturesReducer = (initialState = {}, action) => {
@@ -10,6 +10,10 @@ const picturesReducer = (initialState = {}, action) => {
     return merge({}, action.pictures);
     case CLEAR_PICTURES:
     return {};
+    case REMOVE_PICTURE:
+    const newState = merge({}, initialState);
+    delete newState[action.picture.id];
+    return newState;
     default:
     return initialState;
   }

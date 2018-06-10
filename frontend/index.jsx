@@ -14,10 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPictures = APIPicture.fetchUserPictures;
   window.uploadPicture = APIPicture.uploadPicture;
   window.fetchPicture = APIPicture.fetchPicture;
+  window.updatePicture = APIPicture.updatePicture;
+  window.deletePicture = APIPicture.deletePicture;
   window.getUserPictures = pictureAction.getUserPictures;
   window.getUserPicture = pictureAction.getUserPicture;
   window.fetchUser = APIUtil.fetchUser;
   window.getUser = thunkAction.getUser;
+  window.removePicture = pictureAction.deletePicture;
   let store;
   if (window.currentUser) {
     const preloadedState = {

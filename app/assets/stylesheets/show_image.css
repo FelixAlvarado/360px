@@ -3,11 +3,17 @@
   height: 600px;
 }
 
-
+.default-cursor:hover {
+  cursor: default;
+}
 
 .show-title {
   font-family: Rajdhani;
   text-align: center;
+}
+
+.show-link {
+  text-decoration: none;
 }
 
 .show-username {

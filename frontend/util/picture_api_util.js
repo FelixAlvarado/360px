@@ -19,3 +19,18 @@ export const fetchPicture = (photoId) => {
     url: `/api/pictures/${photoId}`
   });
 };
+
+export const updatePicture = (picture) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/pictures/${picture.id}`,
+    data: {picture}
+  });
+};
+
+export const deletePicture = (photoId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/pictures/${photoId}`
+  });
+};
