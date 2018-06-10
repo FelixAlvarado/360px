@@ -50,3 +50,41 @@
   height: 600px;
   /* text-align: center; */
 }
+.button-holder{
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.button1 {
+  background-color: #1a1aff;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  border: none;
+}
+
+.button1:hover {
+  /* background-color:#4d4dff; */
+  background-color: white;
+  color: #1a1aff;
+  cursor: pointer;
+  border: 2px solid #1a1aff;
+}
+.button2{
+  background-color: #e60000;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  border: none;
+}
+
+.button2:hover {
+  /* background-color: #ff4d4d; */
+  background-color: white;
+  color: #e60000;
+  cursor: pointer;
+  border: 2px solid #e60000;
+}
