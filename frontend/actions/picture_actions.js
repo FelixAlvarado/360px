@@ -1,4 +1,5 @@
 import * as APIPictures from '../util/picture_api_util';
+import * as APIFeed from '../util/feed_util';
 
 export const RECEIVE_PICTURE = 'RECEIVE_PICTURE';
 export const RECEIVE_PICTURES = 'RECEIVE_PICTURES';
@@ -50,4 +51,8 @@ export const updatePicture = (picture) => dispatch => {
 
 export const deletePicture = (pictureId) => dispatch => {
   return APIPictures.deletePicture(pictureId).then(picture => dispatch(removePicture(picture)));
+};
+
+export const homeFeed = () => dispatch => {
+  return APIFeed.homeFeed().then(pictures => dispatch(receivePictures(pictures)));
 };

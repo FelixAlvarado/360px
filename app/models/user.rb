@@ -35,6 +35,15 @@ class User < ApplicationRecord
   foreign_key: :follower_id,
   class_name: 'Follow'
 
+  def get_home_feed
+    followings = self.followings
+    pictures = []
+    followings.each do |follow|
+      user = User.find(follow.leader_id)
+      pictures += user.pictures
+    end
+    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(30)
+  end
 
   def self.find_by_credentials(username,password)
     user = User.find_by(username: username)

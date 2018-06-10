@@ -8,6 +8,7 @@ import * as APIPicture from './util/picture_api_util';
 import * as pictureAction from './actions/picture_actions';
 import * as followAction from './actions/follow_actions';
 import * as followUtil from './util/follow_util';
+import * as feedUtil from './util/feed_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.logout = thunkAction.logout;
@@ -29,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.makeFollow = followAction.createFollow;
   window.getFollows = followAction.fetchFollows;
   window.removeFollow = followAction.deleteFollow;
+  window.homeFeed = feedUtil.homeFeed;
+  window.home = pictureAction.homeFeed;
+  window.fetchUsers = thunkAction.fetchUsers;
   let store;
   if (window.currentUser) {
     const preloadedState = {
