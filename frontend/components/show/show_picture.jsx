@@ -3,12 +3,19 @@ import {Link} from 'react-router-dom';
 class ShowPictureComponent extends React.Component {
   constructor(props){
     super(props);
+    this.handleDelete.bind(this);
   }
 
   nameLink() {
     if (this.props.picture.uploader_id === this.props.currentUser.id) {
       return "default-cursor";
     }
+  }
+
+  handleDelete() {
+    
+    this.props.deletePicture(this.props.picture.id);
+    this.props.closeModal();
   }
   render() {
     return (
@@ -20,8 +27,8 @@ class ShowPictureComponent extends React.Component {
             <span className="show-username"><Link className={`show-link ${this.nameLink()}`} to={`/profile/${this.props.user.id}`} >{this.props.user.username}</Link></span></p>
             <h2 className="show-title">{this.props.picture.title}</h2>
             <div className="button-holder">
-              <button className="button1">Edit</button>
-              <button className="button2">Delete</button>
+              <button  className="button1">Edit</button>
+              <button onClick={() => this.handleDelete()} className="button2">Delete</button>
             </div>
 
         </div>
