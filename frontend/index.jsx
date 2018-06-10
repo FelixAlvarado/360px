@@ -6,6 +6,7 @@ import * as APIUtil from './util/session_api_util';
 import * as thunkAction from './actions/session_actions';
 import * as APIPicture from './util/picture_api_util';
 import * as pictureAction from './actions/picture_actions';
+import * as followUtil from './util/follow_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.logout = thunkAction.logout;
@@ -21,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUser = APIUtil.fetchUser;
   window.getUser = thunkAction.getUser;
   window.removePicture = pictureAction.deletePicture;
+  window.createFollow = followUtil.createFollow;
+  window.fetchFollows = followUtil.fetchFollows;
+  window.deleteFollow = followUtil.deleteFollow;
   let store;
   if (window.currentUser) {
     const preloadedState = {

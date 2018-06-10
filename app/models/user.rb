@@ -28,12 +28,12 @@ class User < ApplicationRecord
   has_many :followers,
   primary_key: :id,
   foreign_key: :leader_id,
-  class_name: 'User'
+  class_name: 'Follow'
 
   has_many :followings,
   primary_key: :id,
   foreign_key: :follower_id,
-  class_name: 'User'
+  class_name: 'Follow'
 
 
   def self.find_by_credentials(username,password)
