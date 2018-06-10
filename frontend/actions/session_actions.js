@@ -5,6 +5,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'CLEAR_USER';
 import * as APIUtil from '../util/session_api_util';
+import {fetchFollows} from './follow_actions';
 
 export const receiveCurrentUser = (currentUser) => {
   return {
@@ -53,9 +54,11 @@ export const getUser = (user) => dispatch => {
 
 export const login = (user) => dispatch => {
   return APIUtil.login(user)
-  .then((currentUser) =>
-    dispatch(receiveCurrentUser(currentUser)),
-    (errors) => dispatch(receiveErrors(errors.responseJSON)));
+  .then((currentUser) => {
+    dispatch(fetchFollows());
+    return dispatch(receiveCurrentUser(currentUser)),
+    (errors) => dispatch(receiveErrors(errors.responseJSON));
+  });
 };
 
 export const logout = () => dispatch => {

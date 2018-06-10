@@ -7,6 +7,10 @@ class FeedComponent extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+    this.props.fetchFollows();
+  }
+
   updateState(num){
     this.props.getUserPictures(num);
     this.props.getUser(num);

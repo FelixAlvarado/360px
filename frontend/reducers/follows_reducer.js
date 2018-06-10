@@ -5,7 +5,6 @@ const followsReducer = (initialState = {}, action) => {
   Object.freeze(initialState);
   switch (action.type){
     case RECEIVE_FOLLOW:
-    console.log("made it");
     return merge({}, initialState, {[action.follow.id]:action.follow});
     case RECEIVE_FOLLOWS:
     return merge({}, action.follows);
@@ -14,7 +13,6 @@ const followsReducer = (initialState = {}, action) => {
     delete newState[action.follow.id];
     return newState;
     default:
-    console.log("made it to default");
     return initialState;
   }
 };

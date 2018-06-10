@@ -4,6 +4,13 @@
   height: 100%;
 }
 
+.profile-holder2 {
+  background-color: #f0f0f5;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 .profile-photo {
   height: 258px;
   width: 300px;
