@@ -6,6 +6,7 @@ import * as APIUtil from './util/session_api_util';
 import * as thunkAction from './actions/session_actions';
 import * as APIPicture from './util/picture_api_util';
 import * as pictureAction from './actions/picture_actions';
+import * as followAction from './actions/follow_actions';
 import * as followUtil from './util/follow_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createFollow = followUtil.createFollow;
   window.fetchFollows = followUtil.fetchFollows;
   window.deleteFollow = followUtil.deleteFollow;
+  window.makeFollow = followAction.createFollow;
+  window.getFollows = followAction.fetchFollows;
+  window.removeFollow = followAction.deleteFollow;
   let store;
   if (window.currentUser) {
     const preloadedState = {
