@@ -56,9 +56,9 @@ export const login = (user) => dispatch => {
   return APIUtil.login(user)
   .then((currentUser) => {
     dispatch(fetchFollows());
-    return dispatch(receiveCurrentUser(currentUser)),
-    (errors) => dispatch(receiveErrors(errors.responseJSON));
-  });
+    return dispatch(receiveCurrentUser(currentUser));},
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
+  );
 };
 
 export const logout = () => dispatch => {

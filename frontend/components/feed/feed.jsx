@@ -22,13 +22,13 @@ class FeedComponent extends React.Component {
         <NavContainer/>
           <h1>You made it to the feed page!</h1>
           <p>The following is {'for'} follow testing:</p>
-          <Link onClick={() => this.updateState(1)} to={`/profile/${1}`}>User1</Link>
+          <Link onClick={() => this.updateState(18)} to={`/profile/${18}`}>Allen</Link>
           <br/>
           <br/>
-          <Link onClick={() => this.updateState(2)} to={`/profile/${2}`}>User2</Link>
+          <Link onClick={() => this.updateState(19)} to={`/profile/${19}`}>Bob</Link>
           <br/>
           <br/>
-          <Link onClick={() => this.updateState(3)} to={`/profile/${3}`}>User3</Link>
+          <Link onClick={() => this.updateState(20)} to={`/profile/${20}`}>Steve</Link>
           <br/>
           <br/>
       </div>

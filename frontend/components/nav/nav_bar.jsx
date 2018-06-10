@@ -49,9 +49,10 @@ class NavBar extends React.Component {
         <Link className="nav_login" to="/login">Log in</Link>
       );
     }   else if (path === "/feed" || path.includes("profile")) {
+      const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
-            <img className="profile-icon" src="https://s15.postimg.cc/8agnin31n/seth_curry.jpg" />
+            <img className="profile-icon" src={defaultProfile} />
               <ul className="profile-list">
                 <li><Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>

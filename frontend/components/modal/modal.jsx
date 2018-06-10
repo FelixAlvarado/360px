@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import UploadPictureContainer from '../upload/upload_picture_container';
 import EditPictureContainer from '../show/edit_picture_container';
 import ShowPictureContainer from '../show/show_picture_container';
+import {Animated} from "react-animated-css";
+
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -35,7 +37,7 @@ if (modal.string === 'upload' || modal.string === 'edit'){
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child-show" onClick={e => e.stopPropagation()}>
-        { component }
+          { component }
       </div>
     </div>
   );
