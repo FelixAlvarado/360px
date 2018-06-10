@@ -88,3 +88,45 @@
   cursor: pointer;
   border: 2px solid #e60000;
 }
+
+.show-following {
+  background-color: #34bf49;
+  color: white;
+  border-radius: 10%;
+  font-size: 11px;
+  width: 69px;
+  height: 22px;
+  display: block;
+}
+
+.show-following:hover span {
+  display: none;
+}
+
+.show-following:hover:before {
+  content: "Unfollow"
+}
+
+
+
+.show-following:hover {
+  background-color: #ff3333;
+  cursor: pointer;
+}
+
+.show-follow {
+  background-color: #00aaff;
+  content: "Follow";
+  color: white;
+  font-size: 11px;
+  width: 69px;
+  height: 22px;
+  display: block;
+
+}
+
+.show-follow:hover {
+  background-color: #6FB7FE;
+  content: "Follow";
+  cursor: pointer;
+}
