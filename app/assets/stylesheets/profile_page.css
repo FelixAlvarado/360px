@@ -7,7 +7,7 @@
 
 
 .profile-photo {
-  /* height: 325px;
+  /* height: 300px;
   width: 400px; */
   width: 20.8vw;
   height: 16.9vw;
@@ -30,7 +30,7 @@
 
 .list-holder {
     margin: 0 auto;
-    width: 1640px;
+    width: 86vw;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -38,7 +38,7 @@
 
 .picture-list li {
   list-style: none;
-  margin: 0px 10px 5px 0px;
+  margin: 0px .60vw .35vw 0px;
   position: relative:
 }
 
@@ -49,9 +49,10 @@
   font-size: 14px;
   width: 78px;
   height: 28px;
-  left: 100%;
-  top: 54%;
-  /* top: 10px; */
+  /* left: 100%;
+  top: 54%; */
+  top: 81vh;
+  right: 25px;
   position: absolute;
   z-index: 999;
 }
@@ -78,8 +79,10 @@
   font-size: 14px;
   width: 78px;
   height: 28px;
+  top: 81vh;
   right: 25px;
   position: absolute;
+  z-index: 999;
 }
 
 .follow:hover {
@@ -116,3 +119,28 @@
   height: 185px;
    position: relative;
 } */
+
+.profile-title {
+  text-align: center;
+  font-size: 30px;
+  color: #5f5754;
+  font-family: Rajdhani;
+  margin: 0px 0px 15px 0px;
+}
+.profile-description {
+  text-align: center;
+  font-size: 14px;
+  color: #5f5754;
+  margin: 0px 0px 15px 0px;
+
+}
+.profile-follow {
+  text-align: center;
+  font-size: 14px;
+  color: #b9c1c7;
+  margin: 0px 0px 30px 0px;
+}
+
+.number {
+  font-weight: bolder;
+}
