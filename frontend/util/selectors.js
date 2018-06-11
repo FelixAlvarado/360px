@@ -1,7 +1,7 @@
 
 
 export const pictureList = (pictures) => {
-  return Object.values(pictures);
+  return Object.values(pictures).reverse();
 };
 
 export const findFollow = (follows, currentUserId, profileUserId) => {

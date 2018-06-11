@@ -53,7 +53,7 @@ class User < ApplicationRecord
 
       end
     end
-    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(20)
+    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(25)
   end
 
   def self.find_by_credentials(username,password)
