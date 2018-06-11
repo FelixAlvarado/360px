@@ -16,9 +16,11 @@ class FeedComponent extends React.Component {
   }
 
   render(){
-    const {users,clearPictures, openModal} = this.props;
+    const {users,clearPictures, openModal, currentUser, follows} = this.props;
     const pictures = this.props.pictures.map((picture) => {
-      return <FeedListItem key={picture.id} picture={picture} user={users[picture.uploader_id]} clearPictures={clearPictures} openModal={openModal}/>;
+      if (currentUser.id !== picture.uploader_id){
+      return <FeedListItem key={picture.id} picture={picture} user={users[picture.uploader_id]} clearPictures={clearPictures} openModal={openModal} follows={follows} currentUser={currentUser}/>;
+      }
     });
     return(
       <div className="feed-container">

@@ -50,3 +50,15 @@
   bottom: 23px;
   margin-left: 10px;
 }
+
+
+
+.feed-title {
+  font-size: 22px;
+  font-family: Rajdhani;
+  color: #5f5754;
+  margin-top: 18px;
+  margin-left: 15px;
+  position: absolute;
+
+}

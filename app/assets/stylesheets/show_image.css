@@ -10,6 +10,8 @@
 .show-title {
   font-family: Rajdhani;
   text-align: center;
+  top: 10px;
+  position: relative;
 }
 
 .show-link {
@@ -91,6 +93,8 @@
 }
 
 .show-following {
+  margin: 5px 0px 0px 50px;
+  position: absolute;
   background-color: #34bf49;
   color: white;
   border-radius: 10%;
@@ -116,6 +120,8 @@
 }
 
 .show-follow {
+  margin: 5px 0px 0px 50px;
+  position: absolute;
   background-color: #00aaff;
   content: "Follow";
   color: white;

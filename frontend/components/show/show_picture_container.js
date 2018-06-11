@@ -6,14 +6,14 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import {deletePicture, updatePicture} from '../../actions/picture_actions';
 import {fetchFollows, createFollow, deleteFollow} from '../../actions/follow_actions';
 
-const mapStateToProps = ({follows, session, entities:{users},ui:{modal}}) => (
-   {
+const mapStateToProps = ({follows, session, entities:{users},ui:{modal}}, ownProps) => {
+   return {
      currentUser: users[session.id],
      picture: modal.picture,
      user: modal.user,
      follow: findFollow(follows,session.id, parseInt(modal.picture.uploader_id))
-   }
-);
+   };
+};
 const mapDispatchToProps = () => dispatch => ({
   closeModal: () => dispatch(closeModal()),
   deletePicture: (photoId) => dispatch(deletePicture(photoId)),
