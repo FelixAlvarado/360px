@@ -52,7 +52,7 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    const {openModal, user} = this.props;
+    const {openModal, user, followers, following} = this.props;
     const pictures = this.props.pictures.map((picture) => {
       return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
         });
@@ -67,7 +67,7 @@ class ProfilePage extends React.Component {
         </div>
         <p className="profile-title" >{user.username}</p>
         <p className="profile-description" >{user.description}</p>
-        <p className="profile-follow" ><span className="number">300</span> Followers   <span className="number">300</span> Following</p>
+        <p className="profile-follow" ><span className="number">{followers}</span> Followers <span className="number">   {following}</span> Following</p>
         <ul className="picture-list">
           <div className="list-holder">
           {pictures}

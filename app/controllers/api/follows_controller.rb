@@ -9,10 +9,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def index
-    user = User.find(current_user.id)
-    followers = user.followers
-    followings = user.followings
-    @follows = followers + followings
+    @follows = Follow.all
     render :index
   end
 
