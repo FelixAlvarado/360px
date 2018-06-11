@@ -1,6 +1,7 @@
 import React from 'react';
 import NavContainer from '../nav/nav_container';
 import {Link} from 'react-router-dom';
+import FeedListItem from './feed_list_item';
 
 class FeedComponent extends React.Component {
   constructor(props) {
@@ -8,29 +9,23 @@ class FeedComponent extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchFollows();
-  }
-
-  updateState(num){
-    this.props.getUserPictures(num);
-    this.props.getUser(num);
+    const {fetchFollows, homeFeed, fetchUsers} = this.props;
+    fetchFollows();
+    homeFeed();
+    fetchUsers();
   }
 
   render(){
+    const {users,clearPictures, openModal} = this.props;
+    const pictures = this.props.pictures.map((picture) => {
+      return <FeedListItem key={picture.id} picture={picture} user={users[picture.uploader_id]} clearPictures={clearPictures} openModal={openModal}/>;
+    });
     return(
       <div className="feed-container">
         <NavContainer/>
-          <h1>You made it to the feed page!</h1>
-          <p>The following is {'for'} follow testing:</p>
-          <Link onClick={() => this.updateState(4)} to={`/profile/${4}`}>Allen</Link>
-          <br/>
-          <br/>
-          <Link onClick={() => this.updateState(5)} to={`/profile/${5}`}>Bob</Link>
-          <br/>
-          <br/>
-          <Link onClick={() => this.updateState(6)} to={`/profile/${6}`}>Steve</Link>
-          <br/>
-          <br/>
+        <ul className="feed-list">
+          {pictures}
+        </ul>
       </div>
     );
   }

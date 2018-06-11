@@ -25,7 +25,6 @@ export const removePicture = (picture) => {
 };
 
 export const clearPictures = () => {
-  console.log("made it!")
   return {type: CLEAR_PICTURES};
 };
 

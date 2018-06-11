@@ -1,5 +1,5 @@
 .show-image{
-  width: 600px;
+  width: 700px;
   height: 600px;
 }
 
@@ -20,10 +20,11 @@
   margin-left: 5px
 }
 .show-div {
-  width: 800px;
+  width: 900px;
   height: 600px;
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
 
 .show-div div {

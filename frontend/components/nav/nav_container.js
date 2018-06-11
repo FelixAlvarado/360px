@@ -5,11 +5,12 @@ import React from 'react';
 import NavBar from './nav_bar';
 import {uploadPicture} from '../../actions/picture_actions';
 import { openModal} from '../../actions/modal_actions';
-import {getUserPictures, clearPictures} from '../../actions/picture_actions';
+import {getUserPictures, clearPictures, homePage} from '../../actions/picture_actions';
 import {getUser} from '../../actions/session_actions';
 
 
 const mapStateToProps = ({entities, session}, ownProps) => {
+    console.log(entities.users[session.id]);
     return  {currentUser: entities.users[session.id],
             profileUser: ownProps.user
     };
@@ -20,7 +21,8 @@ const mapDispatchToProps = () => dispatch => ({
   openModal: (modal) => dispatch(openModal(modal)),
   getUserPictures: (userId) => dispatch(getUserPictures(userId)),
   getUser: (userId) => dispatch(getUser(userId)),
-  clearPictures: () => dispatch(clearPictures())
+  clearPictures: () => dispatch(clearPictures()),
+  homePage: () => dispatch(homePage())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

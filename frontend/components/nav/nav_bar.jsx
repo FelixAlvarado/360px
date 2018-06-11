@@ -26,7 +26,7 @@ class NavBar extends React.Component {
     }
     else if (path === "/feed") {
       return (
-        <Link to="/feed" className="feed_logo">360px</Link>
+        <span className="feed_logo">360px</span>
       );
     }
     else if (path.includes("profile")) {
@@ -36,7 +36,14 @@ class NavBar extends React.Component {
     }
   }
 
+  prepareFeed() {
+    const {clearPictures, homePage} = this.props;
+    clearPictures();
+    homePage();
+  }
+
   updateState(num){
+    this.props.clearPictures();
     this.props.getUserPictures(num);
     this.props.getUser(num);
 
@@ -52,9 +59,9 @@ class NavBar extends React.Component {
       const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
-            <Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
+            <Link onClick={() => this.updateState(this.props.currentUser.id).bind(this)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
-                <li><Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
+                <li><Link onClick={() => this.updateState(this.props.currentUser.id).bind(this)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>

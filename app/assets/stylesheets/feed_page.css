@@ -1,5 +1,52 @@
 .feed-container {
   background-color: #f0f0f5;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+}
+
+.feed-photo {
+  height: 500px;
+  width: 700px;
+}
+
+.feed-photo:hover  {
+  cursor: zoom-in;
+}
+
+.photo-holder {
+  height: 640px;
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid lightgrey;
+}
+
+.photo-holder li {
+  list-style-type: none;
+  /* top: 70px; */
+  position: relative;
+}
+
+.feed-list {
+  padding: 0
+}
+
+.feed-profile-icon {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.feed-username {
+  font-weight: 400;
+  font-size: 17px;
+  font-weight: bolder;
+  color: #5f5754;
+  position: relative;
+  bottom: 23px;
+  margin-left: 10px;
 }

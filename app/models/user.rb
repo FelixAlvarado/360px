@@ -45,7 +45,7 @@ class User < ApplicationRecord
     if pictures.length < 20
       other_pictures = Picture.all.sort {|a,b| b.created_at <=> a.created_at}
       other_pictures.each do |picture|
-        pictures.push(picture) unless pictures.include?(picture)
+        pictures.push(picture) unless pictures.include?(picture) || picture.uploader_id === self.id
       end
     end
     pictures.sort {|a,b| b.created_at <=> a.created_at}.take(20)

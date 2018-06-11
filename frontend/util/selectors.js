@@ -1,4 +1,6 @@
-export const profileList = (pictures) => {
+
+
+export const pictureList = (pictures) => {
   return Object.values(pictures);
 };
 
