@@ -78,6 +78,9 @@ export const fetchUsers = () => dispatch => {
   return APIUtil.fetchUsers().then((users) => dispatch(receiveUsers(users)));
 };
 
+export const updateUser = (user) => dispatch => (
+   APIUtil.updateUser(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)),(errors) => dispatch(receiveErrors(errors.responseJSON))));
+
    // APIUtil.signup(user)
    // .then((currentUser) =>
    //   dispatch(receiveCurrentUser(currentUser)),

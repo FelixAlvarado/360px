@@ -10,7 +10,6 @@ import {getUser} from '../../actions/session_actions';
 
 
 const mapStateToProps = ({entities, session}, ownProps) => {
-    console.log(entities.users[session.id]);
     return  {currentUser: entities.users[session.id],
             profileUser: ownProps.user
     };

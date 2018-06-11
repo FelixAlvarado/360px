@@ -19,6 +19,17 @@
   z-index: 50;
 }
 
+.modal-child-edit {
+  position: absolute;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 387px;
+  z-index: 50;
+}
+
 .modal-child-show {
   position: absolute;
   background-color: white;

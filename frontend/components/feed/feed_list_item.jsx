@@ -8,7 +8,6 @@ class FeedListItem extends React.Component {
   }
 
   suggested() {
-    console.log("made it");
     const {follows, currentUser, user} = this.props;
     if (findFollow(follows, currentUser.id, user.id)){
       return;

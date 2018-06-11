@@ -26,7 +26,7 @@ class ProfilePage extends React.Component {
   }
 
   profileButton() {
-    const {follow,currentUser,user} = this.props;
+    const {follow,currentUser,user, openModal} = this.props;
     if (follow && currentUser.id !== user.id){
       return (
         <button onClick={() => this.updateFollow()} className="following"><span>Following</span></button>
@@ -37,7 +37,7 @@ class ProfilePage extends React.Component {
       );
     } else if (currentUser.id === user.id) {
       return (
-        <button onClick={() =>this.updateFollow()} className="follow">Edit</button>
+        <button onClick={() => openModal({string:'editUser', user: currentUser})} className="follow">Edit</button>
       );
     }
   }

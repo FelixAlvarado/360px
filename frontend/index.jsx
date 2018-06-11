@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.home = pictureAction.homeFeed;
   window.fetchUsers = APIUtil.fetchUsers;
   window.receiveUsers = thunkAction.fetchUsers;
+  window.updateUser = APIUtil.updateUser;
+  window.updateUser = APIUtil.updateUser;
+  window.updateCurrentUser = thunkAction.updateUser;
   let store;
   if (window.currentUser) {
     const preloadedState = {
