@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.removeFollow = followAction.deleteFollow;
   window.homeFeed = feedUtil.homeFeed;
   window.home = pictureAction.homeFeed;
-  window.fetchUsers = thunkAction.fetchUsers;
+  window.fetchUsers = APIUtil.fetchUsers;
+  window.receiveUsers = thunkAction.fetchUsers;
   let store;
   if (window.currentUser) {
     const preloadedState = {

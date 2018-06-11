@@ -42,7 +42,13 @@ class User < ApplicationRecord
       user = User.find(follow.leader_id)
       pictures += user.pictures
     end
-    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(30)
+    if pictures.length < 20
+      other_pictures = Picture.all.sort {|a,b| b.created_at <=> a.created_at}
+      other_pictures.each do |picture|
+        pictures.push(picture) unless pictures.include?(picture)
+      end
+    end
+    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(20)
   end
 
   def self.find_by_credentials(username,password)
