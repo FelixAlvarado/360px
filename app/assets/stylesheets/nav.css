@@ -67,6 +67,10 @@
   background-color: white;
   border-bottom: 1px lightgrey solid;
   height: 53px;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  overflow: hidden;
 }
 
 

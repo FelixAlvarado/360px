@@ -12,16 +12,9 @@ class ProfilePage extends React.Component {
     this.props.getUserPictures(this.props.userId);
     this.props.getUser(this.props.userId);
     this.props.fetchFollows();
-  
+
   }
 
-  changeClass() {
-    if (this.props.pictures.length > 8){
-      return "profile-holder";
-    } else {
-      return "profile-holder2";
-    }
-  }
 
   updateFollow(){
     const {deleteFollow, createFollow, follow, user, currentUser} = this.props;
@@ -50,12 +43,17 @@ class ProfilePage extends React.Component {
       return <PhotoListItem openModal={this.props.openModal} key={picture.id} picture={picture} user={this.props.user}/>;
         });
     return (
-      <div className={`${this.changeClass()}`}>
+      <div className="profile-holder">
         <NavContainer user={this.props.user}/>
-        <h1>Hello {this.props.user.username}. {"This is your profile page."}</h1>
+        <img className= "cover-photo" src="https://s33.postimg.cc/pkpqns48v/fifi.jpg" />
+        <div className="profile-image-holder">
+        <img className= "profile-pic" src="https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg" />
         {this.followButton()}
+        </div>
         <ul className="picture-list">
+          <div className="list-holder">
           {pictures}
+          </div>
         </ul>
       </div>
     );

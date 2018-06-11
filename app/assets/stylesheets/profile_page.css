@@ -4,16 +4,13 @@
   height: 100%;
 }
 
-.profile-holder2 {
-  background-color: #f0f0f5;
-  width: 100vw;
-  height: 100vh;
-}
 
 
 .profile-photo {
-  height: 258px;
-  width: 300px;
+  /* height: 325px;
+  width: 400px; */
+  width: 20.8vw;
+  height: 16.9vw;
   transition-property: filter;
   transition-duration: .5s;
 }
@@ -26,15 +23,23 @@
 }
 
 .picture-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90vw;
+
   margin: auto;
+  padding: 0;
+}
+
+.list-holder {
+    margin: 0 auto;
+    width: 1640px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .picture-list li {
   list-style: none;
-  margin: 0px 5px 5px 0px;
+  margin: 0px 10px 5px 0px;
+  position: relative:
 }
 
 .following {
@@ -44,6 +49,11 @@
   font-size: 14px;
   width: 78px;
   height: 28px;
+  left: 100%;
+  top: 54%;
+  /* top: 10px; */
+  position: absolute;
+  z-index: 999;
 }
 
 .following:hover span {
@@ -68,6 +78,8 @@
   font-size: 14px;
   width: 78px;
   height: 28px;
+  right: 25px;
+  position: absolute;
 }
 
 .follow:hover {
@@ -75,3 +87,32 @@
   content: "Follow";
   cursor: pointer;
 }
+
+.cover-photo {
+  width: 100vw;
+  height: 80vh;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  height: 100px;
+  width: 7%;
+  z-index 50;
+  border: 2px solid white;
+  position: absolute;
+  left: 46.2%;
+}
+
+.profile-image-holder {
+  position: relative;
+  width: 90vw;
+  height: 100px;
+  top: -50px;
+  margin: auto;
+}
+
+/* .button-holder {
+  width: 100vw;
+  height: 185px;
+   position: relative;
+} */

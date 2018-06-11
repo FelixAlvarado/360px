@@ -24,7 +24,7 @@ class FeedComponent extends React.Component {
     });
     return(
       <div className="feed-container">
-        <NavContainer/>
+        <NavContainer />
         <ul className="feed-list">
           {pictures}
         </ul>
