@@ -60,8 +60,8 @@ export const getUser = (user) => dispatch => {
 export const login = (user) => dispatch => {
   return APIUtil.login(user)
   .then((currentUser) => {
-    dispatch(fetchFollows());
-    dispatch(fetchUsers());
+    // dispatch(fetchFollows());
+    // dispatch(fetchUsers());
     return dispatch(receiveCurrentUser(currentUser));},
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
