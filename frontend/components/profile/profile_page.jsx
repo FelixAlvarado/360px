@@ -27,19 +27,39 @@ class ProfilePage extends React.Component {
 
   profileButton() {
     const {follow,currentUser,user, openModal} = this.props;
+    const followButtonClass = this.determineClass();
+    const followingButtonClass = this.determineFollowingClass();
     if (follow && currentUser.id !== user.id){
       return (
-        <button onClick={() => this.updateFollow()} className="following"><span>Following</span></button>
+        <button onClick={() => this.updateFollow()} className={followingButtonClass}><span>Following</span></button>
       );
     } else if (currentUser.id !== user.id) {
       return (
-        <button onClick={() =>this.updateFollow()} className="follow">Follow</button>
+        <button onClick={() =>this.updateFollow()} className={followButtonClass}>Follow</button>
       );
     } else if (currentUser.id === user.id) {
       return (
-        <button onClick={() => openModal({string:'editUser', user: currentUser})} className="follow">Edit</button>
+        <button onClick={() => openModal({string:'editUser', user: currentUser})} className={followButtonClass}>Edit</button>
       );
     }
+  }
+
+  determineFollowingClass() {
+    const {user} = this.props;
+      if (user.cover_url) {
+        return "following";
+      } else {
+        return  "following2";
+      }
+  }
+
+  determineClass() {
+    const {user} = this.props;
+      if (user.cover_url) {
+        return "follow";
+      } else {
+        return  "follow2";
+      }
   }
 
   userDescription() {
@@ -51,9 +71,22 @@ class ProfilePage extends React.Component {
     }
   }
 
+  cover() {
+    const {user} = this.props;
+    if (user.cover_url){
+      return(
+        <img className= "cover-photo" src={user.cover_url} />
+      );
+    } else {
+      return (
+        <div className= "cover-div" ></div>
+      );
+    }
+  }
+
   render() {
     const {openModal, user, followers, following} = this.props;
-    const url = user.profile_url || "https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg";
+    const profileUrl = user.profile_url || "https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg";
     const pictures = this.props.pictures.map((picture) => {
       return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
         });
@@ -61,10 +94,9 @@ class ProfilePage extends React.Component {
       <div className="profile-holder">
         {this.profileButton()}
         <NavContainer user={user}/>
-        <img className= "cover-photo" src="https://s33.postimg.cc/pkpqns48v/fifi.jpg" />
+        {this.cover()}
         <div className="profile-image-holder">
-        <img className= "profile-pic" src={url} />
-
+        <img className= "profile-pic" src={profileUrl} />
         </div>
         <p className="profile-title" >{user.username}</p>
         <p className="profile-description" >{user.description}</p>
@@ -76,6 +108,8 @@ class ProfilePage extends React.Component {
         </ul>
       </div>
     );
+
+
   }
 }
 

@@ -57,17 +57,41 @@
 
 }
 
+.following2 {
+  background-color: #34bf49;
+  color: white;
+  border-radius: 10%;
+  font-size: 14px;
+  width: 78px;
+  height: 28px;
+  /* left: 100%;
+  top: 54%; */
+  left: 93%;
+  top: 170px;
+  position: relative;
+}
+
 .following:hover span {
+  display: none;
+}
+.following2:hover span {
   display: none;
 }
 
 .following:hover:before {
   content: "Unfollow"
 }
+.following2:hover:before {
+  content: "Unfollow"
+}
 
 
 
 .following:hover {
+  background-color: #ff3333;
+  cursor: pointer;
+}
+.following2:hover {
   background-color: #ff3333;
   cursor: pointer;
 }
@@ -84,8 +108,25 @@
   position: absolute;
 
 }
+.follow2 {
+  background-color: #00aaff;
+  content: "Follow";
+  color: white;
+  font-size: 14px;
+  width: 78px;
+  height: 28px;
+  left: 93%;
+  top: 170px;
+  position: relative;
+}
 
 .follow:hover {
+  background-color: #6FB7FE;
+  content: "Follow";
+  cursor: pointer;
+}
+
+.follow2:hover {
   background-color: #6FB7FE;
   content: "Follow";
   cursor: pointer;
@@ -94,6 +135,13 @@
 .cover-photo {
   width: 100vw;
   height: 80vh;
+}
+
+.cover-div {
+  width: 100vw;
+  height: 130px;
+  background-color: #f0f0f5;
+  border: 1px solid white;
 }
 
 .profile-pic {
@@ -113,7 +161,6 @@
   top: -50px;
   margin: auto;
 }
-
 /* .button-holder {
   width: 100vw;
   height: 185px;
