@@ -9,7 +9,6 @@ class Api::FollowsController < ApplicationController
   end
 
   def index
-    # user = User.find(current_user.id)
     @follows = Follow.all
     render :index
   end

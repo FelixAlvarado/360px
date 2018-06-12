@@ -11,7 +11,6 @@ class NavBar extends React.Component {
       return "session_bar";
     }
   }
-
   logo(){
 
     const path = this.props.match.path;

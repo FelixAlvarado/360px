@@ -1,6 +1,6 @@
 import * as APIPictures from '../util/picture_api_util';
 import * as APIFeed from '../util/feed_util';
-
+import RECEIVE_USERS from './session_actions';
 export const RECEIVE_PICTURE = 'RECEIVE_PICTURE';
 export const RECEIVE_PICTURES = 'RECEIVE_PICTURES';
 export const CLEAR_PICTURES = 'CLEAR_PICTURES';
@@ -53,5 +53,8 @@ export const deletePicture = (pictureId) => dispatch => {
 };
 
 export const homeFeed = () => dispatch => {
-  return APIFeed.homeFeed().then(pictures => dispatch(receivePictures(pictures)));
+  return APIFeed.homeFeed().then(pictures => {
+    dispatch(receivePictures(pictures));
+  }
+  );
 };
