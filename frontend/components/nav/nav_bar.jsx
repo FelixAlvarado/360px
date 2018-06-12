@@ -43,9 +43,9 @@ class NavBar extends React.Component {
   }
 
   updateState(num){
-    this.props.clearPictures();
-    this.props.getUserPictures(num);
-    this.props.getUser(num);
+    // this.props.clearPictures();
+    // this.props.getUserPictures(num);
+    // this.props.getUser(num);
 
   }
 
