@@ -1,0 +1,14 @@
+.profile-title {
+  text-align: center;
+  color: grey;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+
+.user-image {
+  width:300px;
+  height: 300px;
+  margin: 0px 50px 30px 50px
+}

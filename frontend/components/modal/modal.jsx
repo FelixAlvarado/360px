@@ -6,6 +6,7 @@ import EditPictureContainer from '../show/edit_picture_container';
 import ShowPictureContainer from '../show/show_picture_container';
 import {Animated} from "react-animated-css";
 import EditUserContainer from '../profile/edit_user_container';
+import UserPhotoContainer from '../profile/user_photo_container';
 
 
 const Modal = ({modal, closeModal}) => {
@@ -26,6 +27,12 @@ const Modal = ({modal, closeModal}) => {
     case 'editUser':
       component = <EditUserContainer />;
       break;
+    case 'uploadProfile':
+        component = <UserPhotoContainer />;
+      break;
+    case 'uploadCover':
+        component = <UserPhotoContainer />;
+      break;
     default:
       return null;
   }
@@ -45,10 +52,18 @@ if (modal.string === 'upload' || modal.string === 'edit' ){
       </div>
     </div>
   );
-} else if ( modal.string == 'editUser') {
+} else if ( modal.string === 'editUser') {
   return (
   <div className="modal-background" onClick={closeModal}>
     <div className="modal-child-edit" onClick={e => e.stopPropagation()}>
+      { component }
+    </div>
+  </div>
+);
+} else if ( modal.string ==='uploadProfile' || modal.string === 'uploadCover' ) {
+  return (
+  <div className="modal-background" onClick={closeModal}>
+    <div className="modal-child-user" onClick={e => e.stopPropagation()}>
       { component }
     </div>
   </div>

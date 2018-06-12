@@ -53,6 +53,7 @@ class ProfilePage extends React.Component {
 
   render() {
     const {openModal, user, followers, following} = this.props;
+    const url = user.profile_url || "https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg";
     const pictures = this.props.pictures.map((picture) => {
       return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
         });
@@ -62,7 +63,7 @@ class ProfilePage extends React.Component {
         <NavContainer user={user}/>
         <img className= "cover-photo" src="https://s33.postimg.cc/pkpqns48v/fifi.jpg" />
         <div className="profile-image-holder">
-        <img className= "profile-pic" src="https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg" />
+        <img className= "profile-pic" src={url} />
 
         </div>
         <p className="profile-title" >{user.username}</p>
