@@ -15,6 +15,14 @@ class ProfilePage extends React.Component {
 
   }
 
+  holderClass() {
+      if (this.props.pictures.length < 5 && !this.props.user.cover_url) {
+        return "profile-holder2";
+      } else {
+        return "profile-holder";
+      }
+
+  }
 
   updateFollow(){
     const {deleteFollow, createFollow, follow, user, currentUser} = this.props;
@@ -91,7 +99,7 @@ class ProfilePage extends React.Component {
       return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
         });
     return (
-      <div className="profile-holder">
+      <div className={this.holderClass()}>
         {this.profileButton()}
         <NavContainer user={user}/>
         {this.cover()}
