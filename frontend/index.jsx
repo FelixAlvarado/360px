@@ -11,21 +11,6 @@ import * as followUtil from './util/follow_util';
 import * as feedUtil from './util/feed_util';
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.logout = thunkAction.logout;
-  window.login = thunkAction.login;
-  window.signup = thunkAction.signup;
-  window.fetchUserPictures = APIPicture.fetchUserPictures;
-  window.uploadPicture = APIPicture.uploadPicture;
-  window.fetchPicture = APIPicture.fetchPicture;
-  window.updatePicture = APIPicture.updatePicture;
-  window.deletePicture = APIPicture.deletePicture;
-  window.getUserPictures = pictureAction.getUserPictures;
-  window.getUserPicture = pictureAction.getUserPicture;
-  window.fetchUser = APIUtil.fetchUser;
-  window.getUser = thunkAction.getUser;
-  window.removePicture = pictureAction.deletePicture;
-  window.createFollow = followUtil.createFollow;
-  window.fetchFollows = followUtil.fetchFollows;
   window.deleteFollow = followUtil.deleteFollow;
   window.makeFollow = followAction.createFollow;
   window.getFollows = followAction.fetchFollows;
