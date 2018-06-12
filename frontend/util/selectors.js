@@ -4,6 +4,10 @@ export const pictureList = (pictures) => {
   return Object.values(pictures).reverse();
 };
 
+export const pictureListFeed = (pictures) => {
+  return Object.values(pictures).reverse();
+};
+
 export const findFollow = (follows, currentUserId, profileUserId) => {
   const followArr = Object.values(follows);
   for (var i = 0; i < followArr.length; i++) {
