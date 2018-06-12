@@ -21,7 +21,7 @@ class PictureForm extends React.Component {
     if (picture.url){
     action({title: this.state.title, image_url:picture.url}, currentUser.id);
   } else if (picture.image_url) {
-    action({id: picture.id, title: this.state.title, image_url:picture.url, uploader_id: picture.uploader_id});
+    action({id: picture.id, title: this.state.title, image_url:picture.secure_url, uploader_id: picture.uploader_id});
   }
     closeModal();
   }

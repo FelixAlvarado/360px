@@ -8,7 +8,7 @@ import {fetchFollows, createFollow, deleteFollow} from '../../actions/follow_act
 const mapStateToProps = ({follows, session, entities:{users},ui:{modal}}, ownProps) => {
    return {
      string: modal.string,
-     url: modal.picture.url,
+     url: modal.picture.secure_url,
      currentUser: users[session.id]
    };
 };
