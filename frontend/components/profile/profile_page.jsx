@@ -96,7 +96,9 @@ class ProfilePage extends React.Component {
     const {openModal, user, followers, following} = this.props;
     const profileUrl = user.profile_url || "https://s33.postimg.cc/nk3sgiaa7/default_profile.jpg";
     const pictures = this.props.pictures.map((picture) => {
-      return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
+      if (user.id === picture.uploader_id){
+        return <PhotoListItem openModal={openModal} key={picture.id} picture={picture} user={user}/>;
+      }
         });
     return (
       <div className={this.holderClass()}>
