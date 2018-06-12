@@ -38,14 +38,17 @@ class ProfilePage extends React.Component {
     const followButtonClass = this.determineClass();
     const followingButtonClass = this.determineFollowingClass();
     if (follow && currentUser.id !== user.id){
+      console.log('my page and following');
       return (
         <button onClick={() => this.updateFollow()} className={followingButtonClass}><span>Following</span></button>
       );
     } else if (currentUser.id !== user.id) {
+      console.log('not my page and not following');
       return (
         <button onClick={() =>this.updateFollow()} className={followButtonClass}>Follow</button>
       );
     } else if (currentUser.id === user.id) {
+      console.log('my page');
       return (
         <button onClick={() => openModal({string:'editUser', user: currentUser})} className={followButtonClass}>Edit</button>
       );

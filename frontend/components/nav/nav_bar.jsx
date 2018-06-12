@@ -61,7 +61,7 @@ class NavBar extends React.Component {
             <div className="side-holder">
             <Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
-                <li><Link onClick={() => this.updateState(this.props.currentUser.id).bind(this)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
+                <li><Link onClick={() => this.updateState(this.props.currentUser.id)} to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>

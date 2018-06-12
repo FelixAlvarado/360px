@@ -48,6 +48,8 @@
   position: relative;
 }
 
+
+
 .following {
   background-color: #34bf49;
   color: white;
@@ -80,6 +82,7 @@
 .following:hover span {
   display: none;
 }
+
 .following2:hover span {
   display: none;
 }
@@ -87,6 +90,7 @@
 .following:hover:before {
   content: "Unfollow"
 }
+
 .following2:hover:before {
   content: "Unfollow"
 }
@@ -97,6 +101,7 @@
   background-color: #ff3333;
   cursor: pointer;
 }
+
 .following2:hover {
   background-color: #ff3333;
   cursor: pointer;

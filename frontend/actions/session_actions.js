@@ -61,6 +61,7 @@ export const login = (user) => dispatch => {
   return APIUtil.login(user)
   .then((currentUser) => {
     dispatch(fetchFollows());
+    dispatch(fetchUsers());
     return dispatch(receiveCurrentUser(currentUser));},
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
@@ -72,7 +73,9 @@ export const logout = () => dispatch => {
 };
 
 export const signup = (user) => dispatch => (
-   APIUtil.signup(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)),(errors) => dispatch(receiveErrors(errors.responseJSON))));
+   APIUtil.signup(user).then((currentUser) => {
+         dispatch(fetchUsers());
+     return dispatch(receiveCurrentUser(currentUser));},(errors) => dispatch(receiveErrors(errors.responseJSON))));
 
 export const fetchUsers = () => dispatch => {
   return APIUtil.fetchUsers().then((users) => dispatch(receiveUsers(users)));
