@@ -1,5 +1,5 @@
 .homeBackground{
-  background: url(https://s33.postimg.cc/addbx4ncv/home.jpg);
+  background: url(https://res.cloudinary.com/dbm56y2y/image/upload/v1528692472/qdxtsyi0sv92zzeebqnn.jpg);
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -15,20 +15,23 @@
    right: 0;
    margin: auto;
 }
-
+/* got help from https://stackoverflow.com/questions/2570972/css-font-border from Pablo Bianchi for this text shadow */
 .home_header {
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
 }
 
 .home_p {
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
   margin: 40px 0px
 }
 
 .home_link {
   text-align: center;
+
 }
 
 .home_button {
@@ -51,5 +54,6 @@
 
 
 .home_link {
-  align-content: center
+  align-content: center;
+
 }
