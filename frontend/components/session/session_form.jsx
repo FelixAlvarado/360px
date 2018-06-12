@@ -42,9 +42,10 @@ class SessionForm extends React.Component {
   return(
     <Animated animationIn="slideInDown" animationOut="fadeOut" isVisible={true}>
     <ul className="session_errors">
-      {this.props.errors.map((error,i) => (
-        <li key={i}>{error}</li>
-      ))}
+      {this.props.errors.map((error,i) => {
+      return( <li key={i}>{error}</li>);
+      }
+    )}
     </ul>
   </Animated>
   );

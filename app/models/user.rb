@@ -42,7 +42,7 @@ class User < ApplicationRecord
       user = User.find(follow.leader_id)
       pictures += user.pictures
     end
-    if pictures.length < 20
+    if pictures.length < 25
       other_pictures = Picture.all.sort {|a,b| b.created_at <=> a.created_at}
       count = 0
       other_pictures.each do |picture|

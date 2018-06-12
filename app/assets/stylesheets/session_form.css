@@ -89,6 +89,7 @@
   color: white;
   list-style: none;
   text-align: center;
+  z-index: 999;
 }
 
 .session_errors:nth-child(odd) {
@@ -102,7 +103,7 @@
 
 .error_holder ul {
   background-color: #f34f50;
-  z-index: 10;
+  z-index: 999;
   position: relative;
   padding-left: 0px;
   margin-top: 0px;
@@ -115,6 +116,8 @@
   width: 100vw;
   position: absolute;
   z-index:1;
+  top: 50px;
+  z-index: 500;
 }
 
 .error_holder_transition {
