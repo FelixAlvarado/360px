@@ -43,7 +43,7 @@ class User < ApplicationRecord
       leader_ids.push(follow.leader_id)
     end
      pictures = Picture.all.sort{|a,b| b.created_at <=> a.created_at}
-     pictures.reject! {|picture| leader_ids.include?(picture.uploader_id)}
+     pictures.reject! {|picture| leader_ids.include?(picture.uploader_id) || picture.uploader_id == self.id}
      pictures.take(30)
   end
 
