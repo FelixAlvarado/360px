@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610022153) do
+ActiveRecord::Schema.define(version: 20180613203140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20180610022153) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["leader_id", "follower_id"], name: "index_follows_on_leader_id_and_follower_id", unique: true
     t.index ["leader_id"], name: "index_follows_on_leader_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "initiator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["initiator_id"], name: "index_notifications_on_initiator_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "pictures", force: :cascade do |t|
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180610022153) do
     t.datetime "updated_at", null: false
     t.string "profile_url"
     t.string "cover_url"
+    t.boolean "new_notification"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
