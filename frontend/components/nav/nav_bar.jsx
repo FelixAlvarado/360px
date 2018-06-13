@@ -104,6 +104,7 @@ class NavBar extends React.Component {
     const currentUserId = this.props.currentUser.id;
     cloudinary.openUploadWidget(window.cloudinary_options, (error, picture) => {
       if (error === null){
+          console.log(picture);
             this.props.openModal({string:'upload', picture: picture[0]});
       }
     });
