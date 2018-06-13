@@ -4,3 +4,10 @@ export const homeFeed = () => {
     url: '/api/feed'
   });
 };
+
+export const discoverFeed = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/fresh'
+  });
+};

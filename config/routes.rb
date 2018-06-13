@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     get '/feed', to: 'feeds#home', controller: 'feeds'
+    get '/fresh', to: 'feeds#fresh', controller: 'feeds'
     resources :follows, only: [:index, :create, :destroy]
     resources :users, only: [:create,:update, :show, :index] do
       resources :pictures, only: [ :index, :create]

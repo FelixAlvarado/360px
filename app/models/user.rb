@@ -35,6 +35,18 @@ class User < ApplicationRecord
   foreign_key: :follower_id,
   class_name: 'Follow'
 
+
+  def get_fresh_feed
+    followings = self.followings
+    leader_ids = []
+    followings.each do |follow|
+      leader_ids.push(follow.leader_id)
+    end
+     pictures = Picture.all.sort{|a,b| b.created_at <=> a.created_at}
+     pictures.reject! {|picture| leader_ids.include?(picture.uploader_id)}
+     pictures.take(30)
+  end
+
   def get_home_feed
     followings = self.followings
     pictures = []
@@ -42,7 +54,7 @@ class User < ApplicationRecord
       user = User.find(follow.leader_id)
       pictures += user.pictures
     end
-    if pictures.length < 25
+    if pictures.length < 30
       other_pictures = Picture.all.sort {|a,b| b.created_at <=> a.created_at}
       count = 0
       other_pictures.each do |picture|
@@ -53,7 +65,7 @@ class User < ApplicationRecord
 
       end
     end
-    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(25)
+    pictures.sort {|a,b| b.created_at <=> a.created_at}.take(30)
   end
 
   def self.find_by_credentials(username,password)

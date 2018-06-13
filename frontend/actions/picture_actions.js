@@ -58,3 +58,10 @@ export const homeFeed = () => dispatch => {
   }
   );
 };
+
+export const discoverFeed = () => dispatch => {
+  return APIFeed.discoverFeed().then(pictures => {
+    dispatch(receivePictures(pictures));
+  }
+  );
+};

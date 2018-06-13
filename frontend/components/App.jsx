@@ -8,6 +8,7 @@ import {AuthRoute, LogRoute} from '../util/route_util';
 import FeedContainer from './feed/feed_container';
 import ProfileContainer from './profile/profile_container';
 import Modal from './modal/modal';
+import DiscoverContainer from './discover/discover_container';
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <LogRoute path="/profile/:id" component={ProfileContainer} />
     <LogRoute path="/feed" component={FeedContainer}/>
+    <LogRoute path="/discover" component={DiscoverContainer}/>
     <LogRoute component={FeedContainer}/>
     </Switch>
   </div>

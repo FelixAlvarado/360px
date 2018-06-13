@@ -28,7 +28,7 @@ class NavBar extends React.Component {
         <span className="feed_logo">360px</span>
       );
     }
-    else if (path.includes("profile")) {
+    else if (path.includes("profile") || path === "/discover") {
       return (
         <Link to="/feed" onClick={() => this.props.clearPictures()} className="profile_logo">360px</Link>
       );
@@ -54,7 +54,7 @@ class NavBar extends React.Component {
       return (
         <Link className="nav_login" to="/login">Log in</Link>
       );
-    }   else if (path === "/feed" || path.includes("profile")) {
+    }   else if (path === "/feed" || path.includes("profile") || path === "/discover") {
       const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
@@ -82,7 +82,7 @@ class NavBar extends React.Component {
       return (
         <Link to="/login"><button className="login_signup">Login</button></Link>
       );
-    }else if (path === "/feed" || path.includes("profile")) {
+    }else if (path === "/feed" || path.includes("profile") || path === "/discover") {
       return (
         <button onClick={(e) => this.uploadPicture(e)} className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );
@@ -107,6 +107,17 @@ class NavBar extends React.Component {
       }
     });
   }
+  discover() {
+    const path = this.props.match.path;
+    if (path === "/" || path === "/login" || path === "/signup") {
+      return (<li className="discover-hidden">Discover</li>);
+    } else if (path === "/feed" || path.includes("profile")){
+      return (<li className="discover"><Link className="discover-text" to="/discover">Discover</Link></li>);
+    } else if (path === "/discover") {
+      return (<li className="discover-no-link">Discover</li>);
+    }
+  }
+
 
 
 render() {
@@ -114,6 +125,7 @@ render() {
     <nav className={this.nav()}>
       <ul className={this.leftNav()}>
       <li>{this.logo()}</li>
+      {this.discover()}
       </ul>
       <ul className="right_nav">
         <li>{this.sideLink()}</li>

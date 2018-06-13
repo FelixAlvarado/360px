@@ -13,6 +13,7 @@
   margin: 15px 0px 0px 50px;
 }
 
+
 .right_nav {
   width: 160px;
   display: flex;
@@ -122,8 +123,17 @@
 .login_left {
   padding: 10px;
   margin: 0px 0px 0px 45px;
-
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 200px;
 }
+
+.login_left li {
+  position: absolute;
+}
+
+
 /* nav bar css for feed page */
 
 .feed_logo {
@@ -221,4 +231,29 @@ color: black;
 
 .profile_logo:hover {
   cursor: pointer;
+}
+
+/* nav bar for discover page */
+
+.discover {
+  left: 105px;
+  top: 21px;
+}
+
+.discover-text{
+  text-decoration: none;
+  color: black;
+}
+
+.discover-no-link{
+  left: 105px;
+  top: 21px;
+}
+.discover-text:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.discover-hidden {
+  display: none;
 }
