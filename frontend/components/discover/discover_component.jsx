@@ -16,11 +16,12 @@ class DiscoverComponent extends React.Component {
 
   render() {
     return (
-      <div>
-      <NavContainer />
-        <h1 className="h1">
-          Made it
-        </h1>
+      <div className="discover-holder">
+        <NavContainer />
+          <div className="discover-top-div">
+            <h1>The newest Pictures</h1>
+            <p>Discover the the freshest photos just added to 360px</p>
+          </div>
       </div>
     );
   }

@@ -3,3 +3,18 @@
   top: 100px;
   position: absolute;
 }
+
+.discover-holder {
+  background-color: #f0f0f5;
+  width: 100vw;
+  height: 100vh;
+}
+
+.discover-top-div {
+  position: absolute;
+  top: 54px;
+  width: 100vw;
+  height: 125px;
+  background-color: white;
+  border-bottom: 1px lightgrey solid;
+}
