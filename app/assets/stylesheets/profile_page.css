@@ -17,8 +17,9 @@
   width: 400px; */
   width: 20.8vw;
   height: 16.9vw;
-  transition-property: filter;
-  transition-duration: .5s;
+  /* transition-property: filter;
+  transition-duration: .5s; */
+  transition: .35s ease;
 }
 
 .profile-photo:hover {

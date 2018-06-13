@@ -112,11 +112,13 @@ class NavBar extends React.Component {
     if (path === "/" || path === "/login" || path === "/signup") {
       return (<li className="discover-hidden">Discover</li>);
     } else if (path === "/feed" || path.includes("profile")){
-      return (<li className="discover"><Link className="discover-text" to="/discover">Discover</Link></li>);
+      return (<li className="discover"><Link onClick={() => this.props.clearPictures()} className="discover-text" to="/discover">Discover</Link></li>);
     } else if (path === "/discover") {
       return (<li className="discover-no-link">Discover</li>);
     }
   }
+
+
 
 
 

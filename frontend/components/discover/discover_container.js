@@ -8,7 +8,8 @@ import {pictureList} from '../../util/selectors';
 import {clearPictures} from '../../actions/picture_actions';
 import { openModal} from '../../actions/modal_actions';
 
-const mapStateToProps = ({follows, entities, session}) => ({
+const mapStateToProps = ({follows, entities, session}) => (
+  {
   currentUser: entities.users[session.id],
   pictures: pictureList(entities.pictures),
   users: entities.users,
