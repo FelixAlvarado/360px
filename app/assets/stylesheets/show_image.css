@@ -54,9 +54,10 @@
 
 .show-child-2 {
   position: relative;
-  width: 200px;
+  /* width: 200px; */
+  width: 13.9vw;
   /* height: 600px; */
-  height: 46.4vw;
+  height: 45.1vw;
   /* text-align: center; */
 }
 .button-holder{
@@ -69,7 +70,8 @@
   background-color: #1a1aff;
   color: white;
   height: 40px;
-  width: 100px;
+  /* width: 100px; */
+  width: 6.95vw;
   font-size: 16px;
   border: none;
 }
@@ -85,7 +87,8 @@
   background-color: #e60000;
   color: white;
   height: 40px;
-  width: 100px;
+  /* width: 100px; */
+  width: 6.95vw;
   font-size: 16px;
   border: none;
 }

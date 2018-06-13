@@ -7,8 +7,8 @@
 .feed-photo {
   /* height: 600px;
   width: 800px; */
-  height: 40.6vw;
-  width: 54.5vw;
+  height: 32.6vw;
+  width: 48.5vw;
 }
 
 .feed-photo:hover  {
@@ -18,8 +18,8 @@
 .photo-holder {
   /* height: 740px;
   width: 800px; */
-  height: 50.3vw;
-  width: 54.5vw;
+  height: 39.8vw;
+  width: 48.5vw;
   background-color: white;
   margin: 0 auto;
   margin-bottom: 20px;
