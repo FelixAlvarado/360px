@@ -41,15 +41,16 @@ class NavBar extends React.Component {
     // homePage();
   }
 
-  updateState(num){
-    // this.props.clearPictures();
-    // this.props.getUserPictures(num);
-    // this.props.getUser(num);
+  // updateState(num){
+  //   this.props.clearPictures();
+  //   this.props.getUserPictures(num);
+  //   this.props.getUser(num);
+  // }
 
-  }
 
   sideLink(){
     const path = this.props.match.path;
+    const{getUserPictures, currentUser} = this.props;
     if (path === "/"){
       return (
         <Link className="nav_login" to="/login">Log in</Link>
@@ -60,7 +61,7 @@ class NavBar extends React.Component {
             <div className="side-holder">
             <Link to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
-                <li><Link to={`/profile/${this.props.currentUser.id}`} className = "profile-link">Profile</Link></li>
+                <li><Link to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>

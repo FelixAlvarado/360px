@@ -12,7 +12,12 @@ class ProfilePage extends React.Component {
     this.props.getUserPictures(this.props.userId);
     this.props.getUser(this.props.userId);
     this.props.fetchFollows();
+  }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.userId !== nextProps.userId){
+    this.props.getUserPictures(nextProps.userId);
+    }
   }
 
   holderClass() {

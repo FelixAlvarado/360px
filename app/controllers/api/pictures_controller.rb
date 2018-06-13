@@ -33,7 +33,6 @@ class Api::PicturesController < ApplicationController
   end
 
   def show
-    puts params
     @picture = Picture.find_by(id: params[:id])
     render :show
   end
