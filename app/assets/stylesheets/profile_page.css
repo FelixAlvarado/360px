@@ -205,3 +205,12 @@
   font-weight: bolder;
   margin-left: 10px;
 }
+
+.profile-footer {
+  height: 54px;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  position: relative;
+  background-color: #f0f0f5;
+}

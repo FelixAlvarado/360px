@@ -18,18 +18,27 @@ class FeedListItem extends React.Component {
   }
   }
 
+  container () {
+    if (this.props.picture.title.length * 5.86 > screen.width * .485 - 30){
+      return "photo-holder2";
+    }else {
+      return "photo-holder";
+    }
+
+  }
   render() {
   const {picture, user, clearPictures, openModal, currentUser, follows} = this.props;
   const defaultUser = user || {id:"", username: "", profile_url:"https://s15.postimg.cc/h65vznrt7/default_profile.jpg"};
   const profile = defaultUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
   return (
-    <div className="photo-holder">
+    <div className={this.container()}>
       <Link className={`show-link`} onClick={() => clearPictures()} to={`/profile/${picture.uploader_id}`}><img className="feed-profile-icon" src={profile}/></Link>
       <Link className={`show-link`} to={`/profile/${picture.uploader_id}`}><span className="feed-username">{defaultUser.username}{this.suggested()}</span></Link>
       <li onClick={() => openModal({string:'show',picture: picture, user: user})}>
         <img className="feed-photo" src={picture.image_url}/>
       </li>
-      <span className="feed-title">{picture.title}</span>
+      <div className="feed-title">{picture.title}</div>
+
     </div>
   );
 }

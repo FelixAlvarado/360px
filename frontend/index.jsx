@@ -9,6 +9,7 @@ import * as pictureAction from './actions/picture_actions';
 import * as followAction from './actions/follow_actions';
 import * as followUtil from './util/follow_util';
 import * as feedUtil from './util/feed_util';
+import * as NotificationUtil from './util/notification_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.deleteFollow = followUtil.deleteFollow;
@@ -22,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateUser = APIUtil.updateUser;
   window.updateUser = APIUtil.updateUser;
   window.updateCurrentUser = thunkAction.updateUser;
+  window.fetchNotifications = NotificationUtil.fetchNotifications;
+  window.createNotification = NotificationUtil.createNotification;
+  window.deleteNotification = NotificationUtil.deleteNotification;
+
   let store;
   if (window.currentUser) {
     const preloadedState = {

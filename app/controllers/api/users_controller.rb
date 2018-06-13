@@ -35,7 +35,7 @@ end
 private
 
 def user_params
-  params.require(:user).permit(:username,:password,:description,:cover_url,:profile_url)
+  params.require(:user).permit(:username,:password,:description,:cover_url,:profile_url,:new_notification)
 end
 
 end

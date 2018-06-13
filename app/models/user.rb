@@ -36,6 +36,9 @@ class User < ApplicationRecord
   foreign_key: :follower_id,
   class_name: 'Follow'
 
+  def get_notifications
+    Notification.all.select{|notification| self.id == notification.user_id}
+  end
 
   def get_fresh_feed
     followings = self.followings

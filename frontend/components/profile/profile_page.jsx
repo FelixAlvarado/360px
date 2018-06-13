@@ -121,6 +121,8 @@ class ProfilePage extends React.Component {
           {pictures}
           </div>
         </ul>
+        <div className="profile-footer">
+        </div>
       </div>
     );
 

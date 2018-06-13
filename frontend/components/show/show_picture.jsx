@@ -6,6 +6,12 @@ class ShowPictureComponent extends React.Component {
     this.handleDelete.bind(this);
   }
 
+  componentDidMount(){
+    document.addEventListener('keydown', (e) => {
+        if (e.keyCode === 27) this.props.closeModal();
+    });
+}
+
   nameLink() {
     if (this.props.picture.uploader_id === this.props.currentUser.id) {
       return "default-cursor";
@@ -56,7 +62,7 @@ class ShowPictureComponent extends React.Component {
   }
 
   handleModalClose () {
-  
+
   }
 
   render() {

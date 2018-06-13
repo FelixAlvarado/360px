@@ -32,6 +32,8 @@ class DiscoverComponent extends React.Component {
               {pictureList}
             </div>
           </ul>
+          <div className="profile-footer">
+          </div>
       </div>
     );
   }

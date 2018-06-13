@@ -26,7 +26,24 @@
   border: 1px solid lightgrey;
 }
 
+.photo-holder2 {
+  /* height: 740px;
+  width: 800px; */
+  height: 41.4vw;
+  width: 48.5vw;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid lightgrey;
+
+}
+
 .photo-holder li {
+  list-style-type: none;
+  /* top: 70px; */
+  position: relative;
+}
+.photo-holder2 li {
   list-style-type: none;
   /* top: 70px; */
   position: relative;
@@ -67,5 +84,7 @@
   margin-top: 18px;
   margin-left: 15px;
   position: absolute;
+  width: 48.5vw;
+  word-wrap: normal;
 
 }

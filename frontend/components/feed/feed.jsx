@@ -29,6 +29,8 @@ class FeedComponent extends React.Component {
         <ul className="feed-list">
           {pictures}
         </ul>
+        <div className="profile-footer">
+        </div>
       </div>
     );
   }
