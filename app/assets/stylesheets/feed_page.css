@@ -5,8 +5,10 @@
 }
 
 .feed-photo {
-  height: 500px;
-  width: 700px;
+  /* height: 600px;
+  width: 800px; */
+  height: 40.6vw;
+  width: 54.5vw;
 }
 
 .feed-photo:hover  {
@@ -14,8 +16,10 @@
 }
 
 .photo-holder {
-  height: 640px;
-  width: 700px;
+  /* height: 740px;
+  width: 800px; */
+  height: 50.3vw;
+  width: 54.5vw;
   background-color: white;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -39,7 +43,8 @@
   height: 50px;
   width: 50px;
   position: relative;
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 7px;
   margin-left: 15px;
 }
 

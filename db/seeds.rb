@@ -18,6 +18,8 @@ user7 = User.create({username: "Garden Flower", password: "password", profile_ur
 user8 = User.create({username: "runnerman2", password: "password", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528776588/bemxylyfht8kh8xhi7lh.jpg"})
 user9 = User.create({username: "Harmony Atom", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528822826/freestocks-org-570360-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528777304/dw2qed71upmhlolo769c.jpg", description: "visioinary, leader, philanthropist"})
 user10 = User.create({username: "mrExtinct", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528494930/kulrpduwnhic8fbh9prf.png", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528490121/azwif34ctvpdbsbwtshp.jpg", description: "visioinary, leader, philanthropist"})
+user11 = User.create({username: "Matt", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528867401/asaf-r-467443-unsplash.jpg", cover_url:"", description: "beach is where the heart is"})
+user12 = User.create({username: "CloudyBeauty", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528867416/touzeey-302645-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867310/valentino-funghi-275990-unsplash.jpg", description: "visioinary, leader, philanthropist"})
 Picture.destroy_all
 Picture.create({title: "Made it to sf",image_url:"https://lonelyplanetimages.imgix.net/a/g/hi/t/9cf024dfd5c0bcb2b17f4785340145ea-san-francisco.jpg?sharp=10&vib=20&w=1200", uploader_id: user1.id})
 Picture.create({title: "Safari time",image_url:"https://s15.postimg.cc/3ucoqf6sb/safari.jpg", uploader_id: user1.id })
@@ -38,3 +40,8 @@ Picture.create({title: "The joys of brunch",image_url:"https://res.cloudinary.co
 Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528825624/ya74xwyn1gxspcpdrhqw.jpg", uploader_id: user5.id })
 Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528827269/erik-witsoe-366860-unsplash.jpg", uploader_id: user6.id })
 Picture.create({title: "last night was awesome",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528825718/nouv1lfig99eth0iatrl.jpg", uploader_id: user7.id })
+Picture.create({title: "nature speaks",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867316/alex-koch-513845-unsplash.jpg", uploader_id: user11.id })
+Picture.create({title: "nature speaks",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867285/dulcey-lima-456862-unsplash.jpg", uploader_id: user12.id })
+Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867266/braden-jarvis-625463-unsplash.jpg", uploader_id: user11.id })
+Picture.create({title: "Wedding Bells",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867264/callie-morgan-285271-unsplash.jpg", uploader_id: user12.id })
+Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867278/eric-ward-304333-unsplash.jpg", uploader_id: user12.id })

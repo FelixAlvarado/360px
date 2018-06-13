@@ -36,8 +36,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
+  /* width: 800px;
+  height: 600px; */
+  width: 72.9vw;
+  height: 45.1vw;
 }
 
 .modal-child-user {

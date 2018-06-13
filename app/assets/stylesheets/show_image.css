@@ -1,6 +1,8 @@
 .show-image{
-  width: 700px;
-  height: 600px;
+  /* width: 700px;
+  height: 600px; */
+  width: 59vw;
+  height: 45.1vw;
 }
 
 .default-cursor:hover {
@@ -16,14 +18,17 @@
 
 .show-link {
   text-decoration: none;
+  color: black;
 }
 
 .show-username {
-  margin-left: 5px
+  margin-left: 5px;
 }
 .show-div {
-  width: 900px;
-  height: 600px;
+  /* width: 900px; */
+  width: 72.9vw;
+  /* height: 600px; */
+  height: 45.1vw;
   display: flex;
   flex-wrap: wrap;
   background-color: white;
@@ -50,7 +55,8 @@
 .show-child-2 {
   position: relative;
   width: 200px;
-  height: 600px;
+  /* height: 600px; */
+  height: 46.4vw;
   /* text-align: center; */
 }
 .button-holder{

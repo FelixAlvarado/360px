@@ -17,4 +17,56 @@
   height: 125px;
   background-color: white;
   border-bottom: 1px lightgrey solid;
+  padding-left: 60px;
+}
+
+.discover-top-div h1 {
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  color: #2D2D2D;
+  font-size: 36px;
+}
+
+.discover-top-div p {
+  margin-top: 0px;
+  font-family: sans-serif;
+  color: #5B5B5B;
+  font-size: 18px;
+}
+
+.discover-picture-list {
+  margin: auto;
+  padding: 0;
+}
+
+.discover-picture-list li {
+  list-style: none;
+  margin: 0px .60vw .35vw 0px;
+  position: relative;
+}
+
+.discover-list-holder {
+    margin: 0 auto;
+    width: 86vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 180px;
+    border-top: #f0f0f5 solid 20px
+}
+
+.discover-photo {
+  /* height: 300px;
+  width: 400px; */
+  width: 27.4vw;
+  height: 22.3vw;
+  transition-property: filter;
+  transition-duration: .5s;
+}
+
+.discover-photo:hover {
+  filter: drop-shadow(8px 8px 8px black);
+  cursor: pointer;
+  transition-property: filter;
+  transition-duration: .5s;
 }
