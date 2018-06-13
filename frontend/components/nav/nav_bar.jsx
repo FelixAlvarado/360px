@@ -50,7 +50,7 @@ class NavBar extends React.Component {
 
   sideLink(){
     const path = this.props.match.path;
-    const{getUserPictures, currentUser} = this.props;
+    const{getUserPictures, currentUser, clearPictures} = this.props;
     if (path === "/"){
       return (
         <Link className="nav_login" to="/login">Log in</Link>
@@ -59,9 +59,9 @@ class NavBar extends React.Component {
       const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
-            <Link to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
+            <Link onClick={() => clearPictures()} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
-                <li><Link to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
+                <li><Link onClick={() => clearPictures()} to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>

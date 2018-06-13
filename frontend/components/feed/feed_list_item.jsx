@@ -9,11 +9,13 @@ class FeedListItem extends React.Component {
 
   suggested() {
     const {follows, currentUser, user} = this.props;
+    if (user){
     if (findFollow(follows, currentUser.id, user.id)){
       return;
     } else {
       return ( " (suggested)" );
     }
+  }
   }
 
   render() {
