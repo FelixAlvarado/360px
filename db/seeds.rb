@@ -23,9 +23,9 @@ user12 = User.create({username: "CloudyBeauty", password: "password", profile_ur
 user13 = User.create({username: "AvidTravel", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528914135/jason-leung-667985-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867310/valentino-funghi-275990-unsplash.jpg", description: ""})
 user14 = User.create({username: "Beverly", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528914169/jordan-andrews-396838-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914153/jon-tyson-520952-unsplash.jpg", description: ""})
 Picture.destroy_all
-Picture.create({title: "Made it to sf",image_url:"https://lonelyplanetimages.imgix.net/a/g/hi/t/9cf024dfd5c0bcb2b17f4785340145ea-san-francisco.jpg?sharp=10&vib=20&w=1200", uploader_id: user1.id})
+Picture.create({title: "Made it to sf",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915569/james-donovan-150590-unsplash.jpg", uploader_id: user1.id})
 Picture.create({title: "Outdoor adventures",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914897/luo-lei-625155-unsplash_2.jpg", uploader_id: user2.id })
-Picture.create({title: "Ready for new years",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914897/luo-lei-625155-unsplash_2.jpg", uploader_id: user3.id })
+Picture.create({title: "Ready for new years",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914995/chuttersnap-336571-unsplash.jpg", uploader_id: user3.id })
 Picture.create({title: "Finally Here!",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915078/thomas-ribaud-665075-unsplash.jpg", uploader_id: user4.id })
 Picture.create({title: "Love this city",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915184/sasha-stories-267948-unsplash.jpg", uploader_id: user5.id })
 Picture.create({title: "Pure relaxation",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915244/seth-doyle-133176-unsplash.jpg", uploader_id: user6.id })
