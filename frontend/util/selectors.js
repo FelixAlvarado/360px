@@ -45,3 +45,8 @@ export const parseUrl = (url) => {
 const newUrl = 'https://res.cloudinary.com/dbm56y2y/image/upload/c_scale,h_500/';
 return newUrl.concat(url.slice(48));
 };
+
+export const parseUrlBig = (url) => {
+const newUrl = 'https://res.cloudinary.com/dbm56y2y/image/upload/c_scale,w_1000/';
+return newUrl.concat(url.slice(48));
+};
