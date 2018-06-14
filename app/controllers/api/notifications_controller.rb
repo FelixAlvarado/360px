@@ -9,6 +9,15 @@ class Api::NotificationsController < ApplicationController
     end
   end
 
+  def update
+    @notification = Notification.find_by(id: params[:id].to_i)
+      if @notification.update(notification_params)
+        render :show
+      else
+        render json: @notification.errors.full_messages, status: 422
+      end
+  end
+
   def index
     @notifications = current_user.get_notifications
     render :index
@@ -23,6 +32,6 @@ class Api::NotificationsController < ApplicationController
   private
 
   def notification_params
-    params.require(:notification).permit(:initiator_id,:user_id)
+    params.require(:notification).permit(:initiator_id,:user_id, :viewed)
   end
 end

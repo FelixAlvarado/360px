@@ -19,3 +19,11 @@ export const deleteNotification = (id) => {
     url: `/api/notifications/${id}`
   });
 };
+
+export const updateNotification = (notification) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/notifications/${notification.id}`,
+    data: {notification}
+  });
+};

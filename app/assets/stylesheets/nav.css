@@ -283,3 +283,24 @@ color: black;
   cursor: pointer;
   color: #68a2ff;
 }
+
+.notify {
+  background-color: red;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  top: -1px;
+  position: relative;
+}
+
+.notiNumber {
+    top: 4px;
+    position: relative;
+    font-weight: bold;
+}
+
+.notify:hover {
+  cursor: pointer;
+}

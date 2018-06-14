@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteNotification = NotificationUtil.deleteNotification;
   window.getNotifications = NotificationAction.fetchNotifications;
   window.makeNotification = NotificationAction.createNotification;
+  window.updateNotification = NotificationAction.updateNotification;
   let store;
   if (window.currentUser) {
     const preloadedState = {

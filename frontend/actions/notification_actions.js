@@ -31,3 +31,9 @@ export const createNotification = (notification) => dispatch => {
     return dispatch(receiveNotification(notification));
   });
 };
+
+export const updateNotification = (notification) => dispatch => {
+  return APINotifications.updateNotification(notification).then(notification => {
+    return dispatch(receiveNotification(notification));
+  });
+};

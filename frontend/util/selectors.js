@@ -51,6 +51,14 @@ const newUrl = 'https://res.cloudinary.com/dbm56y2y/image/upload/c_scale,w_1000/
 return newUrl.concat(url.slice(48));
 };
 
-export const newNotifications = () => {
-
+export const newNotifications = (notifications) => {
+  const array = Object.values(notifications);
+  if (array.length === 0) return [];
+  let newArray = [];
+    array.forEach((n) => {
+      if (n.viewed === false){
+      newArray.push(n);
+    }
+  });
+  return newArray;
 };

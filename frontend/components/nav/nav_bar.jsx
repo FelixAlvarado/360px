@@ -9,6 +9,7 @@ class NavBar extends React.Component {
     }
   }
 
+
   nav(){
     const path = this.props.match.path;
     if (path === "/"){
@@ -68,11 +69,17 @@ class NavBar extends React.Component {
             <Link onClick={() => clearPictures()} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
                 <li className="first-item-list"><Link onClick={() => clearPictures()} to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
-                <li onClick={() => this.props.logout()}>Logout</li>
+                <li onClick={() => this.handleLogout()}>Logout</li>
               </ul>
             </div>
           );
         }
+  }
+
+  handleLogout() {
+    this.props.closeModal();
+    this.props.logout();
+
   }
 
   sideButton() {
@@ -128,9 +135,20 @@ class NavBar extends React.Component {
 
   bell() {
     const path = this.props.match.path;
-    if (path === "/feed" || path.includes("profile") || path === "/discover") {
+    const length = this.props.newNotifications.length;
+    if (length === 0 && (path === "/feed" || path.includes("profile") || path === "/discover") ) {
       return (<span className="bell"><i className="fa fa-bell-o"></i></span>);
+    } else if (length > 0 && (path === "/feed" || path.includes("profile") || path === "/discover") ) {
+      return (<div onClick={() => this.notifyClick()} className="notify"><span className="notiNumber">{length}</span></div>);
+
     }
+  }
+
+  notifyClick() {
+    const {newNotifications,updateNotification} = this.props;
+    newNotifications.forEach((n) => {
+      updateNotification({id:n.id, viewed: true});
+    });
   }
 
   rightNav() {
