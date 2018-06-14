@@ -17,15 +17,15 @@ class FeedListItem extends React.Component {
     }
   }
   }
-
-  container () {
-     if (this.props.picture.title.length * 5.86 > screen.width * .485 - 30){
-      return "photo-holder2";
+  feedTitle() {
+    const {picture} = this.props;
+    if (picture.title === "") {
+      return(<div className="feed-title2">title</div>);
     }else {
-      return "photo-holder";
+      return (<div className="feed-title">{picture.title}</div>);
     }
-
   }
+
   render() {
   const {picture, user, clearPictures, openModal, currentUser, follows, parseUrlBig} = this.props;
   const defaultUser = user || {id:"", username: "", profile_url:"https://s15.postimg.cc/h65vznrt7/default_profile.jpg"};
@@ -37,7 +37,7 @@ class FeedListItem extends React.Component {
       <li onClick={() => openModal({string:'show',picture: picture, user: user})}>
         <img className="feed-photo" src={parseUrlBig(picture.image_url)}/>
       </li>
-      <div className="feed-title">{picture.title}</div>
+      {this.feedTitle()}
 
     </div>
   );

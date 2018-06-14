@@ -18,28 +18,14 @@
 
 
 
-.photo-holder2 {
-  /* height: 740px;
-  width: 800px; */
-  height: 41.4vw;
-  width: 48.5vw;
-  background-color: white;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  border: 1px solid lightgrey;
 
-}
 
 .photo-holder li {
   list-style-type: none;
   /* top: 70px; */
   position: relative;
 }
-.photo-holder2 li {
-  list-style-type: none;
-  /* top: 70px; */
-  position: relative;
-}
+
 
 .feed-list {
   padding: 0;
@@ -84,6 +70,17 @@
   font-size: 22px;
   font-family: Rajdhani;
   color: #5f5754;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 47vw;
+  overflow: wrap break-word;
+  padding-bottom: 15px;
+}
+.feed-title2 {
+  font-size: 22px;
+  font-family: Rajdhani;
+  color: white;
   margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px;
