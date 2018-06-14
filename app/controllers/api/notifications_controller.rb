@@ -1,7 +1,7 @@
 class Api::NotificationsController < ApplicationController
   def create
     @notification = Notification.new(notification_params)
-    if @notification.save
+    if @notification.save!
       render :show
     else
       render json: @notification.errors.full_messages, status: 422

@@ -10,7 +10,7 @@ import * as followAction from './actions/follow_actions';
 import * as followUtil from './util/follow_util';
 import * as feedUtil from './util/feed_util';
 import * as NotificationUtil from './util/notification_util';
-
+import * as NotificationAction  from './actions/notification_actions';
 document.addEventListener('DOMContentLoaded', () => {
   window.deleteFollow = followUtil.deleteFollow;
   window.makeFollow = followAction.createFollow;
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchNotifications = NotificationUtil.fetchNotifications;
   window.createNotification = NotificationUtil.createNotification;
   window.deleteNotification = NotificationUtil.deleteNotification;
-
+  window.getNotifications = NotificationAction.fetchNotifications;
+  window.makeNotification = NotificationAction.createNotification;
   let store;
   if (window.currentUser) {
     const preloadedState = {
