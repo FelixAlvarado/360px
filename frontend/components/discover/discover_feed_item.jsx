@@ -14,10 +14,6 @@ class DiscoverFeedItem extends React.Component {
     const {picture, openModal, user, clearPictures, parseUrl} = this.props;
       const defaultUser = user || {id:"", username:"", profile_url:"https://s15.postimg.cc/h65vznrt7/default_profile.jpg"};
       const profile = defaultUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
-      console.log("old link");
-      console.log(picture.image_url);
-      console.log("new Link");
-      console.log(parseUrl(picture.image_url));
     return (
       <div>
       <li onClick={() => openModal({string:'show',picture: picture, user: user})}><img className="discover-photo" src={parseUrl(picture.image_url)}/>

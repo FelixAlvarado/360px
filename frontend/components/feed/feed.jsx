@@ -10,7 +10,6 @@ class FeedComponent extends React.Component {
 
   componentDidMount () {
     const {fetchFollows, homeFeed, fetchUsers} = this.props;
-
     fetchFollows();
     homeFeed();
     fetchUsers();

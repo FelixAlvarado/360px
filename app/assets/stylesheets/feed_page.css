@@ -15,16 +15,8 @@
   cursor: zoom-in;
 }
 
-.photo-holder {
-  /* height: 740px;
-  width: 800px; */
-  height: 39.8vw;
-  width: 48.5vw;
-  background-color: white;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  border: 1px solid lightgrey;
-}
+
+
 
 .photo-holder2 {
   /* height: 740px;
@@ -75,16 +67,27 @@
   margin-left: 10px;
 }
 
+.photo-holder {
+  /* height: 740px;
+  width: 800px; */
+  /* height: 39.8vw; */
+  /* height: 42.8vw; */
+  width: 48.5vw;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border: 1px solid lightgrey;
 
+}
 
 .feed-title {
   font-size: 22px;
   font-family: Rajdhani;
   color: #5f5754;
-  margin-top: 18px;
+  margin-top: 15px;
   margin-left: 15px;
-  position: absolute;
+  margin-right: 15px;
   width: 48.5vw;
-  word-wrap: normal;
-
+  overflow: wrap break-word;
+  padding-bottom: 15px;
 }

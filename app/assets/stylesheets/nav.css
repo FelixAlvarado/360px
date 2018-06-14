@@ -201,9 +201,12 @@ top: 40px;
 .profile-list > li {
   width: 80px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 
+}
+
+.first-item-list {
+  padding-top: 10px;
 }
 .profile-link {
 text-decoration: none;
@@ -256,4 +259,27 @@ color: black;
 
 .discover-hidden {
   display: none;
+}
+
+.login-right-nav {
+  width: 190px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 15px 50px 0px 0px;
+}
+
+.login-right-nav li{
+  margin: auto 0px
+}
+
+.bell {
+  font-size: 19px;
+  position: relative;
+  top: -1px;
+}
+
+.bell:hover {
+  cursor: pointer;
+  color: #68a2ff;
 }

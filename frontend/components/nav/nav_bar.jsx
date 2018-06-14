@@ -3,6 +3,12 @@ import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
+  componentDidMount() {
+    if(this.props.currentUser){
+      this.props.fetchNotifications();
+    }
+  }
+
   nav(){
     const path = this.props.match.path;
     if (path === "/"){
@@ -61,7 +67,7 @@ class NavBar extends React.Component {
             <div className="side-holder">
             <Link onClick={() => clearPictures()} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>
               <ul className="profile-list">
-                <li><Link onClick={() => clearPictures()} to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
+                <li className="first-item-list"><Link onClick={() => clearPictures()} to={`/profile/${currentUser.id}`} className = "profile-link">Profile</Link></li>
                 <li onClick={() => this.props.logout()}>Logout</li>
               </ul>
             </div>
@@ -120,8 +126,21 @@ class NavBar extends React.Component {
     }
   }
 
+  bell() {
+    const path = this.props.match.path;
+    if (path === "/feed" || path.includes("profile") || path === "/discover") {
+      return (<span className="bell"><i className="fa fa-bell-o"></i></span>);
+    }
+  }
 
-
+  rightNav() {
+        const path = this.props.match.path;
+    if (path === "/" || path === "/login" || path === "/signup"){
+      return "right_nav";
+    } else {
+      return "login-right-nav";
+    }
+  }
 
 
 render() {
@@ -131,8 +150,9 @@ render() {
       <li>{this.logo()}</li>
       {this.discover()}
       </ul>
-      <ul className="right_nav">
+      <ul className={this.rightNav()}>
         <li>{this.sideLink()}</li>
+        <li>{this.bell()}</li>
         <li>{this.sideButton()}</li>
       </ul>
     </nav>

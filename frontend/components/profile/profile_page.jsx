@@ -30,11 +30,12 @@ class ProfilePage extends React.Component {
   }
 
   updateFollow(){
-    const {deleteFollow, createFollow, follow, user, currentUser} = this.props;
+    const {deleteFollow, createFollow, follow, user, currentUser, createNotification} = this.props;
     if (follow){
       deleteFollow(follow.id);
     } else {
       createFollow({leader_id: user.id, follower_id: currentUser.id});
+      createNotification({initiator_id: currentUser.id, user_id: user.id});
     }
   }
 

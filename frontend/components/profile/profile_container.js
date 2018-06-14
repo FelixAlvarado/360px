@@ -5,7 +5,7 @@ import {getUserPictures} from '../../actions/picture_actions';
 import {getUser} from '../../actions/session_actions';
 import { openModal} from '../../actions/modal_actions';
 import {fetchFollows, createFollow, deleteFollow} from '../../actions/follow_actions';
-
+import {createNotification} from '../../util/notification_util';
 
 const mapStateToProps = ({entities, session, follows}, ownProps) =>{
   const defaultUser = {id: "",username:""};
@@ -17,7 +17,8 @@ const mapStateToProps = ({entities, session, follows}, ownProps) =>{
   follow: findFollow(follows,session.id, parseInt(ownProps.match.params.id)),
   followers: getFollowers(follows,parseInt(ownProps.match.params.id)),
   following: getFollowings(follows,parseInt(ownProps.match.params.id)),
-  parseUrl: parseUrl
+  parseUrl: parseUrl,
+  createNotification: createNotification
           };
 };
 

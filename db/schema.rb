@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613203140) do
+ActiveRecord::Schema.define(version: 20180614172931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180613203140) do
     t.integer "initiator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "viewed"
     t.index ["initiator_id"], name: "index_notifications_on_initiator_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
@@ -52,7 +53,6 @@ ActiveRecord::Schema.define(version: 20180613203140) do
     t.datetime "updated_at", null: false
     t.string "profile_url"
     t.string "cover_url"
-    t.boolean "new_notification"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

@@ -1,6 +1,7 @@
 class Api::NotificationsController < ApplicationController
   def create
     @notification = Notification.new(notification_params)
+    @notification.viewed = false
     if @notification.save!
       render :show
     else

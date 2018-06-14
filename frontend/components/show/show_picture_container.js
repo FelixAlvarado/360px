@@ -5,13 +5,15 @@ import ShowPictureComponent from './show_picture';
 import { closeModal, openModal } from '../../actions/modal_actions';
 import {deletePicture, updatePicture} from '../../actions/picture_actions';
 import {fetchFollows, createFollow, deleteFollow} from '../../actions/follow_actions';
+import {createNotification} from '../../util/notification_util';
 
 const mapStateToProps = ({follows, session, entities:{users},ui:{modal}}, ownProps) => {
    return {
      currentUser: users[session.id],
      picture: modal.picture,
      user: modal.user,
-     follow: findFollow(follows,session.id, parseInt(modal.picture.uploader_id))
+     follow: findFollow(follows,session.id, parseInt(modal.picture.uploader_id)),
+     createNotification: createNotification
    };
 };
 const mapDispatchToProps = () => dispatch => ({

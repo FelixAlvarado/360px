@@ -7,6 +7,7 @@ export const REMOVE_USER = 'CLEAR_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 import * as APIUtil from '../util/session_api_util';
 import {fetchFollows} from './follow_actions';
+import {fetchNotifications} from './notification_actions';
 
 export const receiveCurrentUser = (currentUser) => {
   return {
@@ -61,6 +62,7 @@ export const login = (user) => dispatch => {
   return APIUtil.login(user)
   .then((currentUser) => {
     dispatch(fetchUsers());
+    dispatch(fetchNotifications());
     return dispatch(receiveCurrentUser(currentUser));},
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
@@ -82,6 +84,9 @@ export const fetchUsers = () => dispatch => {
 
 export const updateUser = (user) => dispatch => (
    APIUtil.updateUser(user).then((currentUser) => dispatch(receiveCurrentUser(currentUser)),(errors) => dispatch(receiveErrors(errors.responseJSON))));
+
+export const updateUserNotification = (user) => dispatch => (
+   APIUtil.updateUser(user).then((user) => dispatch(receiveUser(user)),(errors) => dispatch(receiveErrors(errors.responseJSON))));
 
    // APIUtil.signup(user)
    // .then((currentUser) =>

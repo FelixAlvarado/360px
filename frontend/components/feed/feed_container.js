@@ -8,6 +8,7 @@ import {pictureList, parseUrlBig} from '../../util/selectors';
 import {clearPictures} from '../../actions/picture_actions';
 import { openModal} from '../../actions/modal_actions';
 
+
 const mapStateToProps = ({follows, entities, session}) => ({
   currentUser: entities.users[session.id],
   pictures: pictureList(entities.pictures),
