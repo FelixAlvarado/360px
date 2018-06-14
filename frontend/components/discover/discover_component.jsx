@@ -16,9 +16,9 @@ class DiscoverComponent extends React.Component {
   }
 
   render() {
-    const {pictures, follows, currentUser, users, clearPictures, openModal} = this.props;
+    const {pictures, follows, currentUser, users, clearPictures, openModal, parseUrl} = this.props;
     const pictureList = pictures.map((picture =>{
-      return( <DiscoverFeedItem key={picture.id} picture={picture} follows={follows} currentUser={currentUser} user={users[picture.uploader_id]} clearPitures={clearPictures} openModal={openModal} />);
+      return( <DiscoverFeedItem key={picture.id} picture={picture} follows={follows} currentUser={currentUser} user={users[picture.uploader_id]} clearPitures={clearPictures} parseUrl={parseUrl} openModal={openModal} />);
     }));
     return (
       <div className="discover-holder">

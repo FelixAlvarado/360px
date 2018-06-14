@@ -29,7 +29,7 @@ Picture.create({title: "Ready for new years",image_url:"https://res.cloudinary.c
 Picture.create({title: "Finally Here!",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915078/thomas-ribaud-665075-unsplash.jpg", uploader_id: user4.id })
 Picture.create({title: "Love this city",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915184/sasha-stories-267948-unsplash.jpg", uploader_id: user5.id })
 Picture.create({title: "Pure relaxation",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915244/seth-doyle-133176-unsplash.jpg", uploader_id: user6.id })
-Picture.create({title: "Yay!!",image_url:"https://s15.postimg.cc/72h63cy63/forest.jpg", uploader_id: user7.id })
+
 
 Picture.create({title: "Morning Essentials",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528776389/zjc06v3xthn94njm8vnl.jpg", uploader_id: user8.id })
 Picture.create({title: "Beauty in the night",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528777129/s9imhavzxntyo3y7gmcc.jpg", uploader_id: user9.id })

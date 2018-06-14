@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProfilePage from './profile_page';
-import {pictureList, findFollow, getFollowers, getFollowings} from '../../util/selectors';
+import {pictureList, findFollow, getFollowers, getFollowings, parseUrl} from '../../util/selectors';
 import {getUserPictures} from '../../actions/picture_actions';
 import {getUser} from '../../actions/session_actions';
 import { openModal} from '../../actions/modal_actions';
@@ -16,7 +16,8 @@ const mapStateToProps = ({entities, session, follows}, ownProps) =>{
   pictures: pictureList(entities.pictures),
   follow: findFollow(follows,session.id, parseInt(ownProps.match.params.id)),
   followers: getFollowers(follows,parseInt(ownProps.match.params.id)),
-  following: getFollowings(follows,parseInt(ownProps.match.params.id))
+  following: getFollowings(follows,parseInt(ownProps.match.params.id)),
+  parseUrl: parseUrl
           };
 };
 
