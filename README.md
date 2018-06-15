@@ -14,7 +14,7 @@ This site is a clone of 500px.com. While logged in, and one can view other peopl
     get '/feed', to: 'feeds#home', controller: 'feeds'
     get '/fresh', to: 'feeds#fresh', controller: 'feeds'
 ```
-* In the feeds controller, I used a predefined User method on the current user in order to get the two feeds accordingly. Right now, my app fetches pictures based on who the user is following, as well as whatever pictures are most recent. I my logic also adds pictures from users the current user isn't following, so their feed won't be empty upon signing up for an account: 
+* In the feeds controller, I used a predefined User method on the current user in order to get the two feeds accordingly. Right now, my app fetches pictures based on who the user is following, as well as whatever pictures are most recent. My logic also adds pictures from users the current user isn't following, so their feed won't be empty upon signing up for an account: 
 
 ```ruby
   def get_home_feed
@@ -45,7 +45,7 @@ On the front end, html elements are rendered based on if the current user is fol
 ### Followings 
 I really enjoyed implementing this in my website. It was fun planning out and and going through the steps these step. While the backend for implementing follows was faily simple, more logic was required in the front end.
 
-* One of the key mechanices for rendering the follow button is knowing weather the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector: 
+* One of the key mechanices for rendering the follow button correctly is knowing whether the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector: 
 
 ```javascript
 export const findFollow = (follows, currentUserId, profileUserId) => {
