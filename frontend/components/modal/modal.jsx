@@ -7,6 +7,7 @@ import ShowPictureContainer from '../show/show_picture_container';
 import {Animated} from "react-animated-css";
 import EditUserContainer from '../profile/edit_user_container';
 import UserPhotoContainer from '../profile/user_photo_container';
+import NotificationModalContainer from '../notification/notification_modal_container';
 
 
 const Modal = ({modal, closeModal}) => {
@@ -33,6 +34,9 @@ const Modal = ({modal, closeModal}) => {
     case 'uploadCover':
         component = <UserPhotoContainer />;
       break;
+      case 'notify':
+          component = <NotificationModalContainer />;
+        break;
     default:
       return null;
   }
@@ -64,6 +68,14 @@ if (modal.string === 'upload' || modal.string === 'edit' ){
   return (
   <div className="modal-background" onClick={closeModal}>
     <div className="modal-child-user" onClick={e => e.stopPropagation()}>
+      { component }
+    </div>
+  </div>
+);
+} else if ( modal.string ==='notify' ) {
+  return (
+  <div className="modal-background2" onClick={closeModal}>
+    <div className="modal-child-notify" onClick={e => e.stopPropagation()}>
       { component }
     </div>
   </div>

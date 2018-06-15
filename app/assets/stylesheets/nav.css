@@ -303,4 +303,5 @@ color: black;
 
 .notify:hover {
   cursor: pointer;
+  opacity: .8;
 }

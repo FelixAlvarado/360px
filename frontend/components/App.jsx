@@ -10,6 +10,7 @@ import ProfileContainer from './profile/profile_container';
 import Modal from './modal/modal';
 import DiscoverContainer from './discover/discover_container';
 
+
 const App = () => (
   <div>
     <Modal />

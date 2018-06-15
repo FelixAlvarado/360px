@@ -60,5 +60,9 @@ export const newNotifications = (notifications) => {
       newArray.push(n);
     }
   });
-  return newArray;
+  return newArray.reverse();
+};
+
+export const notifyArray = (notifications) => {
+  return Object.values(notifications).reverse();
 };

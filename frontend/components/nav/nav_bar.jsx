@@ -35,7 +35,7 @@ class NavBar extends React.Component {
         <span className="feed_logo">360px</span>
       );
     }
-    else if (path.includes("profile") || path === "/discover") {
+    else if (path.includes("profile") || path === "/discover" || path === "/notifications") {
       return (
         <Link to="/feed" onClick={() => this.props.clearPictures()} className="profile_logo">360px</Link>
       );
@@ -62,7 +62,7 @@ class NavBar extends React.Component {
       return (
         <Link className="nav_login" to="/login">Log in</Link>
       );
-    }   else if (path === "/feed" || path.includes("profile") || path === "/discover") {
+    }   else if (path === "/feed" || path.includes("profile") || path === "/discover" || path === "/notifications") {
       const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
           return (
             <div className="side-holder">
@@ -96,7 +96,7 @@ class NavBar extends React.Component {
       return (
         <Link to="/login"><button className="login_signup">Login</button></Link>
       );
-    }else if (path === "/feed" || path.includes("profile") || path === "/discover") {
+    }else if (path === "/feed" || path.includes("profile") || path === "/discover" || path === "/notifications") {
       return (
         <button onClick={(e) => this.uploadPicture(e)} className="upload"><i className="icon_upload fa fa-cloud-upload"></i>   <span className="font_overide">Upload</span></button>
       );
@@ -117,7 +117,6 @@ class NavBar extends React.Component {
     const currentUserId = this.props.currentUser.id;
     cloudinary.openUploadWidget(window.cloudinary_options, (error, picture) => {
       if (error === null){
-          console.log(picture);
             this.props.openModal({string:'upload', picture: picture[0]});
       }
     });
@@ -126,7 +125,7 @@ class NavBar extends React.Component {
     const path = this.props.match.path;
     if (path === "/" || path === "/login" || path === "/signup") {
       return (<li className="discover-hidden">Discover</li>);
-    } else if (path === "/feed" || path.includes("profile")){
+    } else if (path === "/feed" || path.includes("profile") || path === "/notifications"){
       return (<li className="discover"><Link onClick={() => this.props.clearPictures()} className="discover-text" to="/discover">Discover</Link></li>);
     } else if (path === "/discover") {
       return (<li className="discover-no-link">Discover</li>);
@@ -134,21 +133,23 @@ class NavBar extends React.Component {
   }
 
   bell() {
+    const {openModal, newNotifications} = this.props;
     const path = this.props.match.path;
     const length = this.props.newNotifications.length;
-    if (length === 0 && (path === "/feed" || path.includes("profile") || path === "/discover") ) {
-      return (<span className="bell"><i className="fa fa-bell-o"></i></span>);
-    } else if (length > 0 && (path === "/feed" || path.includes("profile") || path === "/discover") ) {
+    if (length === 0 && (path === "/feed" || path.includes("profile") || path === "/discover" || path === "/notifications") ) {
+      return (<span onClick={() => openModal({string: 'notify', newNotifications: newNotifications})} className="bell"><i className="fa fa-bell-o"></i></span>);
+    } else if (length > 0 && (path === "/feed" || path.includes("profile") || path === "/discover" || path === "/notifications") ) {
       return (<div onClick={() => this.notifyClick()} className="notify"><span className="notiNumber">{length}</span></div>);
 
     }
   }
 
   notifyClick() {
-    const {newNotifications,updateNotification} = this.props;
+    const {newNotifications,updateNotification, openModal} = this.props;
     newNotifications.forEach((n) => {
       updateNotification({id:n.id, viewed: true});
     });
+    openModal({string: 'notify', newNotifications: newNotifications})
   }
 
   rightNav() {

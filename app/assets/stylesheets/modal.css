@@ -8,6 +8,15 @@
   z-index: 30;
 }
 
+.modal-background2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 200;
+}
+
 .modal-child {
   position: absolute;
   background-color: white;
@@ -51,4 +60,16 @@
   width: 400px;
   height: 470px;
   z-index: 50;
+}
+
+.modal-child-notify {
+  position: absolute;
+  background-color: white;
+  right: 0%;
+  top: 0%;
+  margin-top: 57px;
+  margin-right: 10px;
+  border: 1px solid rgba(34,34,34,0.1);
+  /* transform: translate(-50%, -50%); */
+  width: 356px;
 }

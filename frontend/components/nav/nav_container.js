@@ -14,8 +14,6 @@ const mapStateToProps = ({entities, session, notifications}, ownProps) => {
     return  {currentUser: entities.users[session.id],
             profileUser: ownProps.user,
             newNotifications: newNotifications(notifications)
-
-
     };
 };
 const mapDispatchToProps = () => dispatch => ({
