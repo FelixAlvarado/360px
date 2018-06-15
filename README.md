@@ -42,7 +42,7 @@ On the front end, html elements are rendered based on if the current user is fol
 
 ![](https://res.cloudinary.com/dbm56y2y/image/upload/v1529098063/suggested.png)
 
-### Following 
+### Followings 
 I really enjoyed implementing this in my website. It was fun planning out and and going through the steps these step. While the backend for implementing follows was faily simple, more logic was required in the front end.
 
 * One of the key mechanices for rendering the follow button is knowing weather the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector: 
