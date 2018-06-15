@@ -39,7 +39,8 @@
   margin-top: 0px;
   padding-left: 0px;
   overflow: scroll;
-  max-height: 500px;
+  margin-bottom: 0px;
+  max-height: 496px;
 }
 
 .notify-list li {

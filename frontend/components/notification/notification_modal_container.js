@@ -7,6 +7,7 @@ import {deletePicture, updatePicture} from '../../actions/picture_actions';
 import {fetchFollows, createFollow, deleteFollow} from '../../actions/follow_actions';
 import {createNotification} from '../../util/notification_util';
 
+
 const mapStateToProps = ({follows,notifications, session, entities:{users},ui:{modal}}, ownProps) => {
    return {
      currentUser: users[session.id],

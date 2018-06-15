@@ -6,6 +6,7 @@ class NavBar extends React.Component {
   componentDidMount() {
     if(this.props.currentUser){
       this.props.fetchNotifications();
+      this.props.fetchUsers();
     }
   }
 
@@ -145,11 +146,16 @@ class NavBar extends React.Component {
   }
 
   notifyClick() {
-    const {newNotifications,updateNotification, openModal} = this.props;
+    const {newNotifications,updateNotification, openModal, notifications} = this.props;
     newNotifications.forEach((n) => {
+      notifications.forEach((n2) => {
+        if (n.user_id === n2.user_id && n2.initiator_id === n.initiator_id && n.id !== n2.id){
+          updateNotification({id:n2.id, viewed: true});
+        }
+      });
       updateNotification({id:n.id, viewed: true});
     });
-    openModal({string: 'notify', newNotifications: newNotifications})
+    openModal({string: 'notify', newNotifications: newNotifications});
   }
 
   rightNav() {

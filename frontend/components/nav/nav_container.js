@@ -6,14 +6,15 @@ import NavBar from './nav_bar';
 import {uploadPicture} from '../../actions/picture_actions';
 import { openModal, closeModal} from '../../actions/modal_actions';
 import {getUserPictures, clearPictures, homePage} from '../../actions/picture_actions';
-import {getUser} from '../../actions/session_actions';
+import {getUser,fetchUsers} from '../../actions/session_actions';
 import {fetchNotifications, updateNotification} from '../../actions/notification_actions';
-import {newNotifications} from '../../util/selectors';
+import {newNotifications, notifyArray} from '../../util/selectors';
 
 const mapStateToProps = ({entities, session, notifications}, ownProps) => {
     return  {currentUser: entities.users[session.id],
             profileUser: ownProps.user,
-            newNotifications: newNotifications(notifications)
+            newNotifications: newNotifications(notifications),
+            notifications: notifyArray(notifications)
     };
 };
 const mapDispatchToProps = () => dispatch => ({
@@ -26,7 +27,8 @@ const mapDispatchToProps = () => dispatch => ({
   homePage: () => dispatch(homePage()),
   fetchNotifications: () => dispatch(fetchNotifications()),
   closeModal: () => dispatch(closeModal()),
-  updateNotification: (notification) => dispatch(updateNotification(notification))
+  updateNotification: (notification) => dispatch(updateNotification(notification)),
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
