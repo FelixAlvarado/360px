@@ -4,6 +4,14 @@ This site is a clone of 500px.com. While logged in, and one can view other peopl
 
 [360px](https://threesixtypixels.herokuapp.com/#/)
 
+# Technologies
+
+* Ruby on Rails with postgresql
+* React-Redux
+* Cloudinary
+* AJAX
+* Vanilla DOM 
+
 # Key Features
 
 ### Home and Discover Feeds
