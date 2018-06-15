@@ -5,7 +5,7 @@
   },
   "scripts": {
     "webpack": "webpack --watch -d",
-    "postinstall": "webpack"
+    "postinstall": "webpack --optimize-minimize"
   },
   "name": "ThreeSixtyPx",
   "private": true,
