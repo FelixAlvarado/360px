@@ -4,17 +4,17 @@ This site is a clone of 500px.com. While logged in, and one can view other peopl
 
 [360px](https://threesixtypixels.herokuapp.com/#/)
 
-# Key Features 
+# Key Features
 
 ### Home and Discover Feeds
 
-* At first, when tackling how to fetch the correct pictures for both feeds, I was not sure how to differenctiate between the two. Up until that point, I was only taught about the standard routes. After researching this topic, I came across custom routes , which proved to be a viable solution. My routes for my two feeds are as follows: 
+* At first, when tackling how to fetch the correct pictures for both feeds, I was not sure how to differenctiate between the two. Up until that point, I was only taught about the standard routes. After researching this topic, I came across custom routes , which proved to be a viable solution. My routes for my two feeds are as follows:
 
 ```ruby
     get '/feed', to: 'feeds#home', controller: 'feeds'
     get '/fresh', to: 'feeds#fresh', controller: 'feeds'
 ```
-* In the feeds controller, I used a predefined User method on the current user in order to get the two feeds accordingly. Right now, my app fetches pictures based on who the user is following, as well as whatever pictures are most recent. My logic also adds pictures from users the current user isn't following, so their feed won't be empty upon signing up for an account: 
+* In the feeds controller, I used a predefined User method on the current user in order to get the two feeds accordingly. Right now, my app fetches pictures based on who the user is following, as well as whatever pictures are most recent. My logic also adds pictures from users the current user isn't following, so their feed won't be empty upon signing up for an account:
 
 ```ruby
   def get_home_feed
@@ -42,10 +42,10 @@ On the front end, html elements are rendered based on if the current user is fol
 
 ![](https://res.cloudinary.com/dbm56y2y/image/upload/v1529098063/suggested.png)
 
-### Followings 
+### Followings
 I really enjoyed implementing this in my website. It was fun planning out and and going through the steps these step. While the backend for implementing follows was faily simple, more logic was required in the front end.
 
-* One of the key mechanices for rendering the follow button correctly is knowing whether the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector: 
+* One of the key mechanices for rendering the follow button correctly is knowing whether the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector:
 
 ```javascript
 export const findFollow = (follows, currentUserId, profileUserId) => {
@@ -73,12 +73,14 @@ export const findFollow = (follows, currentUserId, profileUserId) => {
     }
   }
 ```
-   
+
    A notification is also created so the new followee will receive a notification letting them know that they received a new follower.
 
 # Things to Note
 
-In the near future, I plan on coming back to this project and adding new features. These include: 
+* Logging in through demo login provides the user with a new notification so they can see the feature without having to make multiple accounts.
+
+In the near future, I plan on coming back to this project and adding new features. These include:
 
 * Taggings for pictures
 * A search feature for users and tags
