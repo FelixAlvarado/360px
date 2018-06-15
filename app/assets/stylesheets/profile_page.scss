@@ -151,11 +151,15 @@
   /*background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%; */
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
    height: 80vh;
-  .inside-cover{
-
-     object-fit: cover;
+   display: flex;
+  .inside-cover {
+    /* flex-shrink: 0; */
+    max-width: 100%;
   }
 }
 
