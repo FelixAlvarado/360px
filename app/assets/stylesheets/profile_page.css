@@ -147,8 +147,16 @@
 }
 
 .cover-photo {
+
+  /*background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; */
   width: 100vw;
-  height: 80vh;
+   height: 80vh;
+  .inside-cover{
+
+     object-fit: cover;
+  }
 }
 
 .cover-div {

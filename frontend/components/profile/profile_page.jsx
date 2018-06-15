@@ -89,7 +89,9 @@ class ProfilePage extends React.Component {
     const {user} = this.props;
     if (user.cover_url){
       return(
-        <img className= "cover-photo" src={user.cover_url} />
+        <div className="cover-photo">
+        <img className= "inside-cover" src={user.cover_url} />
+        </div>
       );
     } else {
       return (
