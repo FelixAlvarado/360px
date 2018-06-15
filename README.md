@@ -73,7 +73,8 @@ export const findFollow = (follows, currentUserId, profileUserId) => {
     }
   }
 ```
-    A notification is also created so the new followee will receive a notification letting them know that they received a new follower.
+   
+   A notification is also created so the new followee will receive a notification letting them know that they received a new follower.
 
 # Things to Note
 
