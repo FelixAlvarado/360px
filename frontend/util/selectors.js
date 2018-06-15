@@ -54,15 +54,14 @@ return newUrl.concat(url.slice(48));
 export const newNotifications = (notifications) => {
   const array = Object.values(notifications);
   if (array.length === 0) return [];
-  let userNames = [];
+  let ids = [];
   let newArray = [];
     array.forEach((n) => {
-      if (n.viewed === false && !userNames.includes(n.username)){
-      userNames.push(n.username);
+      if (n.viewed === false && !ids.includes(n.initiator_id)){
+      ids.push(n.initiator_id);
       newArray.push(n);
     }
   });
-  console.log(newArray);
   return newArray.reverse();
 };
 

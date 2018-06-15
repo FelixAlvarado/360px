@@ -26,10 +26,10 @@ class NotifyModal extends React.Component {
   }
   render() {
     const {users, closeModal} = this.props;
-    let userNames = [];
+    let ids = [];
     const notificationList = this.props.notifications.map((n) => {
-        if (!userNames.includes(n.username)){
-          userNames.push(n.username);
+        if (!ids.includes(n.initiator_id)){
+          ids.push(n.initiator_id);
       return <NotifyModalListItem  key={n.id} closeModal={closeModal} initiator={users[n.initiator_id]}/>;
       }
     });
