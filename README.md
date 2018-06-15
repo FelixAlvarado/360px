@@ -2,7 +2,7 @@
 
 This site is a clone of 500px.com. While logged in, and one can view other people's photos on their feed, follow other users, and upload pictures of their own. Ruby on Rails was used for the back end, and React was used for the front end.
 
-[Link to 360px](https://threesixtypixels.herokuapp.com/#/)
+[360px](https://threesixtypixels.herokuapp.com/#/)
 
 # Key Features 
 
