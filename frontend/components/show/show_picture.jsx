@@ -68,7 +68,7 @@ class ShowPictureComponent extends React.Component {
 
   render() {
     const {closeModal, picture, user} = this.props;
-    const defaultProfile = this.props.user.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
+    const defaultProfile = this.props.user.profile_url || "https://res.cloudinary.com/dbm56y2y/image/upload/v1529040240/default_profile.jpg";
     return (
       <div className="show-div">
 

@@ -28,8 +28,8 @@ class FeedListItem extends React.Component {
 
   render() {
   const {picture, user, clearPictures, openModal, currentUser, follows, parseUrlBig} = this.props;
-  const defaultUser = user || {id:"", username: "", profile_url:"https://s15.postimg.cc/h65vznrt7/default_profile.jpg"};
-  const profile = defaultUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
+  const defaultUser = user || {id:"", username: "", profile_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529040240/default_profile.jpg"};
+  const profile = defaultUser.profile_url || "https://res.cloudinary.com/dbm56y2y/image/upload/v1529040240/default_profile.jpg";
   return (
     <div className="photo-holder">
       <Link className={`show-link`} onClick={() => clearPictures()} to={`/profile/${picture.uploader_id}`}><img className="feed-profile-icon" src={profile}/></Link>

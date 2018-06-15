@@ -8,7 +8,7 @@
 #
 
 User.destroy_all
- user1 = User.create({username: "Felix", password: "password"})
+ user1 = User.create({username: "Felix", password: "password", cover_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528916078/dabtje61xxqksoljk470.jpg"})
 user2 = User.create({username: "Allen", password: "password"})
 user3 = User.create({username: "Bob", password: "password"})
 user4 = User.create({username: "Steve", password: "password"})
@@ -22,6 +22,9 @@ user11 = User.create({username: "Matt", password: "password", profile_url: "http
 user12 = User.create({username: "CloudyBeauty", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528867416/touzeey-302645-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867310/valentino-funghi-275990-unsplash.jpg", description: "visioinary, leader, philanthropist"})
 user13 = User.create({username: "AvidTravel", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528914135/jason-leung-667985-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528867310/valentino-funghi-275990-unsplash.jpg", description: ""})
 user14 = User.create({username: "Beverly", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1528914169/jordan-andrews-396838-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914153/jon-tyson-520952-unsplash.jpg", description: ""})
+user15 = User.create({username: "zzAdam12", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1529038851/ezra-comeau-jeffrey-661583-unsplash.jpg", cover_url:"", description: ""})
+user16 = User.create({username: "PrincessMary", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1529038852/brad-halcrow-590097-unsplash.jpg", cover_url:"", description: "Sleep, Eat Well, Enjoy Life"})
+user17 = User.create({username: "IntrepidFusion", password: "password", profile_url: "https://res.cloudinary.com/dbm56y2y/image/upload/v1529038882/demetrius-washington-670055-unsplash.jpg", cover_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038861/murray-campbell-29990-unsplash.jpg", description: "I'm here for the good time, not a long time"})
 Picture.destroy_all
 Picture.create({title: "Made it to sf",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528915569/james-donovan-150590-unsplash.jpg", uploader_id: user1.id})
 Picture.create({title: "Outdoor adventures",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914897/luo-lei-625155-unsplash_2.jpg", uploader_id: user2.id })
@@ -49,3 +52,9 @@ Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/u
 Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914160/florin-kozma-678292-unsplash.jpg", uploader_id: user13.id })
 Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914176/joshua-fuller-204247-unsplash.jpg", uploader_id: user14.id })
 Picture.create({title: "No adventure is too far off",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1528914153/jon-tyson-520952-unsplash.jpg", uploader_id: user14.id })
+Picture.create({title: "My little happy place",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038894/allef-vinicius-253985-unsplash.jpg", uploader_id: user15.id })
+Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038873/vladimir-kudinov-61639-unsplash.jpg", uploader_id: user16.id })
+Picture.create({title: "Pure Solice",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038913/jorge-flores-223750-unsplash.jpg", uploader_id: user17.id })
+Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038926/fancycrave-225507-unsplash.jpg", uploader_id: user15.id })
+Picture.create({title: "",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038906/pietro-de-grandi-329892-unsplash.jpg", uploader_id: user16.id })
+Picture.create({title: "This trip was well worth it",image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1529038920/liam-pozz-247954-unsplash.jpg", uploader_id: user17.id })

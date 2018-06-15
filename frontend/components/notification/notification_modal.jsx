@@ -13,6 +13,17 @@ class NotifyModal extends React.Component {
     });
 }
 
+  notifyBody(notificationList) {
+    if (this.props.notifications.length === 0){
+      return(<div className="no-notify"><span>You have no notifications</span></div>);
+    }else {
+      return (
+        <ul className="notify-list">
+          {notificationList}
+        </ul>
+      );
+    }
+  }
   render() {
     const {users, closeModal} = this.props;
     const notificationList = this.props.notifications.map((n) => {
@@ -23,10 +34,7 @@ class NotifyModal extends React.Component {
       <div className="notify-header">
         <span className="notify-title">Notifications</span>
       </div>
-      <ul className="notify-list">
-        {notificationList}
-      </ul>
-
+        {this.notifyBody(notificationList)}
       </div>
 
     );

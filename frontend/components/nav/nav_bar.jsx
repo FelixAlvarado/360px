@@ -63,7 +63,7 @@ class NavBar extends React.Component {
         <Link className="nav_login" to="/login">Log in</Link>
       );
     }   else if (path === "/feed" || path.includes("profile") || path === "/discover" || path === "/notifications") {
-      const defaultProfile = this.props.currentUser.profile_url || "https://s15.postimg.cc/h65vznrt7/default_profile.jpg";
+      const defaultProfile = this.props.currentUser.profile_url || "https://res.cloudinary.com/dbm56y2y/image/upload/v1529040240/default_profile.jpg";
           return (
             <div className="side-holder">
             <Link onClick={() => clearPictures()} to={`/profile/${this.props.currentUser.id}`} className = "profile-link"><img className="profile-icon" src={defaultProfile} /></Link>

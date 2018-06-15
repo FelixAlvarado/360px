@@ -2,7 +2,7 @@
   height: 45px;
   width: 100%;
   background-color: #f7f8fa;
-  /* border-bottom: 1px solid rgba(34,34,34,0.1); */
+  border-bottom: 1px solid rgba(34,34,34,0.1);
 }
 
 .notify-title {
@@ -17,7 +17,7 @@
 }
 
 .no-notify {
-  background-color: #f7f8fa;
+  background-color: white;
   height: 55px;
 }
 
@@ -26,7 +26,7 @@
   font-family: sans-serif;
   font-size: 14px;
   top: 62.5px;
-  left: 85.8px;
+  left: 100.8px;
   position: absolute;
 }
 
