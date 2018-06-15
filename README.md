@@ -43,6 +43,43 @@ On the front end, html elements are rendered based on if the current user is fol
 ![](https://res.cloudinary.com/dbm56y2y/image/upload/v1529098063/suggested.png)
 
 ### Following 
-I really enjoyed implementing this in my app.
+I really enjoyed implementing this in my website. It was fun planning out and and going through the steps these step. While the backend for implementing follows was faily simple, more logic was required in the front end.
+
+* One of the key mechanices for rendering the follow button is knowing weather the current user is following the user whose profile they are on. The follow for both users is retreived in the following selector: 
+
+```javascript
+export const findFollow = (follows, currentUserId, profileUserId) => {
+  const followArr = Object.values(follows);
+  for (var i = 0; i < followArr.length; i++) {
+    const follow = followArr[i];
+    if (follow.follower_id === currentUserId && follow.leader_id === profileUserId) {
+      return follow;
+    }
+  }
+  return null;
+};
+```
+
+* In order for the follow button is stay updated, I determined that I would have to dispatch the proper action based on whether the current user is following the user who the button corrensponds to:
+
+```javascript
+  updateFollow(){
+    const {deleteFollow, createFollow, follow, user, currentUser, createNotification} = this.props;
+    if (follow){
+      deleteFollow(follow.id);
+    } else {
+      createFollow({leader_id: user.id, follower_id: currentUser.id});
+      createNotification({initiator_id: currentUser.id, user_id: user.id});
+    }
+  }
+```
+    A notification is also created so the new followee will receive a notification letting them know that they received a new follower.
 
 # Things to Note
+
+In the near future, I plan on coming back to this project and adding new features. These include: 
+
+* Taggings for pictures
+* A search feature for users and tags
+* Likes and comments
+* A notification page
