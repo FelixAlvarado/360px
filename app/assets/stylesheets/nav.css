@@ -56,6 +56,10 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.nav_login:hover {
+  color: #00aaff;
+}
+
 .nav_button:hover {
   background-color: #6FB7FE;
   cursor: pointer;

@@ -20,13 +20,18 @@
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
+  font-family: Rajdhani;
+  font-size: 44px;
+  font-weight: 900;
 }
 
 .home_p {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
-  margin: 40px 0px
+  margin: 40px 0px;
+  font-family: Rajdhani;
+  font-size: 38px;
 }
 
 .home_link {

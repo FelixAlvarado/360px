@@ -47,7 +47,7 @@ class User < ApplicationRecord
     end
      pictures = Picture.all.sort{|a,b| b.created_at <=> a.created_at}
      pictures.reject! {|picture| leader_ids.include?(picture.uploader_id) || picture.uploader_id == self.id}
-     pictures.take(30)
+     pictures.take(45)
   end
 
   def get_home_feed

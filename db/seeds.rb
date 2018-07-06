@@ -87,6 +87,10 @@ Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/
 Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530853952/mesut-kaya-724174-unsplash.jpg", uploader_id: user21.id })
 Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530853956/qi-bin-725216-unsplash.jpg", uploader_id: user22.id })
 Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530853965/wes-hicks-725738-unsplash.jpg", uploader_id: user23.id })
+Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530901252/da-kraplak-727110-unsplash.jpg", uploader_id: user24.id })
+Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530901254/grillot-edouard-726756-unsplash.jpg", uploader_id: user25.id })
+Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530901254/usukhbayar-gankhuyag-726907-unsplash.jpg", uploader_id: user1.id })
+Picture.create({title: Faker::Movie.quote,image_url:"https://res.cloudinary.com/dbm56y2y/image/upload/v1530901255/peter-oslanec-726455-unsplash.jpg", uploader_id: user2.id })
 
 Follow.create({leader_id:user3.id, follower_id:user1.id})
 Follow.create({leader_id:user22.id, follower_id:user1.id})
