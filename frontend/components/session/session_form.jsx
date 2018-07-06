@@ -58,6 +58,10 @@ demo(){
     return (
       <button className="demo_login" onClick={() => this.props.processForm({username:"Felix",password:"password"})}>Demo Login</button>
     );
+  } else {
+    return (
+      <button className="demo_login" onClick={() => this.props.login({username:"Felix",password:"password"})}>Demo Login</button>
+    )
   }
 }
 

@@ -61,7 +61,7 @@ class User < ApplicationRecord
       other_pictures = Picture.all.sort {|a,b| b.created_at <=> a.created_at}
       count = 0
       other_pictures.each do |picture|
-        unless count == 3 || picture.uploader_id === self.id || pictures.include?(picture)
+        unless count == 10 || picture.uploader_id === self.id || pictures.include?(picture)
           pictures.push(picture)
           count += 1
         end
