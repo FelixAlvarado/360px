@@ -16,6 +16,8 @@ This site is a clone of 500px.com. While logged in, and one can view other peopl
 
 ### Home and Discover Feeds
 
+![Text](https://s15.postimg.cc/3yhcnad3f/Screen_Shot_2018-07-06_at_11.47.53_AM.png)
+
 * At first, when tackling how to fetch the correct pictures for both feeds, I was not sure how to differenctiate between the two. Up until that point, I was only taught about the standard routes. After researching this topic, I came across custom routes , which proved to be a viable solution. My routes for my two feeds are as follows:
 
 ```ruby
