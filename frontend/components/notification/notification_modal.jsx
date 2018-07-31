@@ -8,9 +8,26 @@ class NotifyModal extends React.Component {
   }
 
   componentDidMount(){
+
     document.addEventListener('keydown', (e) => {
         if (e.keyCode === 27) this.props.closeModal();
     });
+
+    let notifyModal = document.getElementsByClassName('modal-child-notify');
+
+  document.addEventListener('click', (e) => {
+    if (notifyModal.length > 0){
+    var clickOnModal = notifyModal[0].contains(e.target);
+
+    if (!clickOnModal) {
+      this.props.closeModal();
+      notifyModal = [];
+    }
+  }
+  });
+
+
+
 }
 
   notifyBody(notificationList) {

@@ -74,11 +74,11 @@ if (modal.string === 'upload' || modal.string === 'edit' ){
 );
 } else if ( modal.string ==='notify' ) {
   return (
-  <div className="modal-background2" onClick={closeModal}>
+  // <div className="modal-background2" onClick={closeModal}>
     <div className="modal-child-notify" onClick={e => e.stopPropagation()}>
       { component }
     </div>
-  </div>
+  // </div>
 );
 }
 };

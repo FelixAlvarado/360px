@@ -63,6 +63,7 @@
 }
 
 .modal-child-notify {
+  z-index: 50;
   position: absolute;
   background-color: white;
   right: 0%;
